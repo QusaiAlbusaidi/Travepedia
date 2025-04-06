@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.homepage-bg {
+    background-image: url(BG1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+header {
+    position: relative;
+    height: 100;
+}
+
+.hero {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 780px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 25px;    
+}
+
+
+
+
+.logo {
+    display: flex;
+    align-items:center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 70px;
+}
+
+.logotext a{
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    gap: 110px
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 90px;
+}
+
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #007BFF;
+}
+
+.contact-btn {
+    background-color: #4B0082;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+}
+
+.contact-btn:hover {
+    background-color: #814aa8;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
