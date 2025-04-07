@@ -2,53 +2,8 @@
     <head>
         
         <style>
-          header {
-    position: relative;
-    height: 100;
-}
-.logo {
-    display: flex;
-    align-items:center;
-    gap: 10px;
-}
-.logo img {
-  width: 70px;}
-  .logotext a{
-    font-size: 30px;
-    font-weight: bold;
-    color: black;
-    text-decoration: none;
-}
-nav {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 20px 40px;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    gap: 110px
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 90px;
-}
-
-.nav-links a {
-    color: black;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-}
-.nav-links a:hover {
-    color: #007BFF;
-}
-
-
-            div:hover {
+          
+            .av:hover {
             background-color: #4B3F72;
              transition: background-color 0.3s ease, color 0.3s ease;
 }   
@@ -68,7 +23,7 @@ nav {
                 background-size: cover;
 
                 
-                font-family:'Times New Roman', Times, serif;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 text-align:center;
                 color: rgb(249, 255, 254);
                 text-shadow: 1px 1px 7cqh rgb(244, 8, 8);
@@ -78,9 +33,7 @@ nav {
 
         
             .trip h1{font-size: 26px; }
-                 .trip h1:hover{background-color: #4B3F72; border-radius: 20%;transition: background-color 0.6s ease, color 0.6s ease;}
-
-
+                 
             .luxury{
                 background-color:#4B3F72;
                 background-position: left;
@@ -156,6 +109,7 @@ nav {
     align-items: flex-end;   /* Align to the bottom */
     text-align: center;    }
       </style>
+      <link rel="stylesheet" href="styles.css">
     </head>
     <body>
       <header>
@@ -166,20 +120,21 @@ nav {
             </div>
             <ul class="nav-links">
                 <li><a href="AboutUs.html">About Us</a></li>
-                <li><a href="">Services page </a></li>
-                <li><a href="#">Services page</a></li>
+                <li><a href="Services.html">Services page </a></li>
+                <li><a href="HolidayPackages.html">Holiday Packages</a></li>
                 <li><a href="luxury.html" class="active">Luxury Concierge page</a></li>
                 <li><a href="discover oman.html">Experience Oman</a></li>
-                <li><a href="#">Feedback</a></li>
-                <li><a href="contact us.html" class="contact-btn">Get In Touch</a></li>
+                <li><a href="Feedback.html">Feedback</a></li>
+                <li><a href="contact us.html" class="contact-btn">Contact Us</a></li>
             </ul>
         </nav>
     </header>
+    <br/>
       <div class = "trip">
         <h1> WE DELIVER LUXURY TRAVEL EXPERIENCES </h>
         </h1>
       </div>
-    <div style="display: flex; justify-content: center; gap: 80px;">
+    <div style="display: flex; justify-content: center; gap: 80px;" class="av">
         <div style="background-color: #4B3F72; color: white; padding: 10px 20px; border-radius: 10cqh;">
           <h1>Luxury Travel Rewards, Seamlessly Delivered</h1>
           <p>We believe that the best rewards aren't things—they're experiences. We create high-end, fully managed travel rewards that recognize excellence and leave a lasting impact.</p>
@@ -214,4 +169,7 @@ nav {
       </div>
       
     </body>
+    <footer>
+      <p>&copy; 2025 Travepedia. All rights reserved.</p>
+  </footer>
 </html>
