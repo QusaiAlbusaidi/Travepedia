@@ -11,9 +11,25 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);}
+    footer {
+    background-color: #4B0082;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;}
+    body {display: flex;
+        flex-direction: column;
+        min-height: 100vh;}
+    .contact-btn {
+    background-color: #4B0082;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: black;}
+    .contact-btn:hover {
+    background-color: #814aa8;}
 </style>
 </head>    
-<body>
+<body style="background-image: url(airplaneBG.png); background-size: cover; background-position: center;">
     <header>
         <nav>
             <div class="logo">
@@ -31,16 +47,21 @@
             </ul>
         </nav>
     </header>
-    <div class="form-box" style="margin: 50px;">
-        <form method="post" action="mailto:">
-        <label style="font-family: Arial;">Name:</label>
-        <input type="text" name="name"></br></br>
-        <label style="font-family: Arial;">Email:</label>
-        <input type="text" name="email"></br></br>
-        <label style="font-family: Arial;">Message:</label></br>
-        <textarea name="message" rows="4" cols="50"></textarea></br></br>
-        <input type="submit" value="Send an email" style="background-color: purple; padding: 10px 20px; border-radius: 5px;color: black; font-weight: bold;">
+    <div class="form-box" style="margin: 50px;margin-bottom: 20%; flex: 1;">
+        <p style="font-weight: bold;">Your opinion matters. Help us improve our website by giving us your feedback in detail!</p>
+        <form method="post" action="mailto:https://httpbin.org/get">
+            <label style="font-family: Arial;">Name:</label>
+            <input type="text" name="name"></br></br>
+            <label style="font-family: Arial;">Email:</label>
+            <input type="text" name="email"></br></br>
+            <label style="font-family: Arial;">Message:</label></br>
+            <textarea name="message" rows="4" cols="50"></textarea></br></br>
+            <input type="submit" value="Send an email" class="contact-btn">
         </form>
     </div>
+
+    <footer>
+        <p>&copy; 2025 Travepedia. All rights reserved.</p>
+    </footer>
 </body>
 </html>
