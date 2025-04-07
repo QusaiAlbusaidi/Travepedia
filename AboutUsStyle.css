@@ -1,4 +1,3 @@
-
 .ahero {
     position: relative;
     height: 100%;
@@ -68,6 +67,14 @@
     color: #666;
 }
 
+
+footer {
+    background-color: #4B0082;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
 
 
 .nav-links a.active {
