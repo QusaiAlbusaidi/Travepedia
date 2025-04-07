@@ -1,9 +1,35 @@
 <html>
-<head>
-    <title>About Us</title>
-    <link rel="stylesheet" href="AboutUsStyle.css ">
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <head>
+        <title>About Us</title>
+        <link rel="stylesheet" href="AboutUsStyle.css">
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            
+            .teamtable {
+                margin: 40px auto;
+                width: fit-content;
+                border: 2px solid #4B0082;
+                border-radius: 8px;
+            }
+            
+            .teamtable th{
+                padding: 12px 20px;
+                text-align: center;
+                border: 1px solid #ddd;
+                background-color: #4B0082;
+                color: white;
+                font-weight: bold;
+            }
+            
+            .teamtable td {
+                padding: 12px 20px;
+                text-align: center;
+                border: 1px solid #ddd;}
+           
+          
+        </style>
+    
+    </head>
 <body>
     <header>
         <nav>
@@ -12,7 +38,7 @@
                 <span class="logotext"><a href="index.html"> Travepedia </a></span>
             </div>
             <ul class="nav-links">
-                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="AboutUs.html" class="active">About Us</a></li>
                 <li><a href="Services.html">Services page </a></li>
                 <li><a href="HolidayPackages.html">Holiday Packages</a></li>
                 <li><a href="#">Luxury Concierge page</a></li>
@@ -40,7 +66,41 @@
                 <h2>Our Mission</h2>
                 <p>As adventurous students of Sultan Qaboos University, we craft authentic travel experiences based on both our extensive local knowledge and global discoveries. Having discovered Oman's hidden gems, from mountain trails we walk between lectures to hidden cafes where we study - we now share these insider tips while integrating lessons from our own student travels across Asia, Europe and beyond. We craft experiences that blend profound intimacy with Omani culture and the spirit of adventure of a young traveler, making travel into value conscious, knowledge-rich explorations that inspire as much as they excite.</p>
                 <h2>Our Team</h2>
-                <p>Our team is made up of SQU students,  passionate travelers who combine our academic knowledge with real-world adventure experience. .</p>
+                <h2>Our Team</h2>
+                <p>Our team is made up of SQU students, passionate travelers who combine our academic knowledge with real-world adventure experience.</p>
+                
+                <div class="teamtable">
+                    <table>
+                        
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                            </tr>
+                        
+                        
+                            <tr>
+                                <td>Saif Alharrasi</td>
+                                <td>Founder & CEO</td>
+                                <td>Saif@travepedia.com</td>
+                                <td>+968 9934 5321</td>
+                            </tr>
+                            <tr>
+                                <td>Qusai Albusaidi</td>
+                                <td>Travel Specialist</td>
+                                <td>Qusai@travepedia.com</td>
+                                <td>+968 9234 5678</td>
+                            </tr>
+                            <tr>
+                                <td>Yousuf Alsaqri</td>
+                                <td>Marketing Director</td>
+                                <td>khalid@travepedia.com</td>
+                                <td>+968 9345 6789</td>
+                            </tr>
+                        
+                    </table>
+                </div>
                 
                 <div class="stats">
                     <div class="stat-item">
@@ -61,8 +121,11 @@
     </section>
     
     <footer>
-        <p>&copy; 2025 Travepedia. All rights reserved.</p>
+        <p>&copy; 2025 Travepedia. All rights reserved. | 
+           <span class="email-link">
+               Email: <a href="mailto:travepediaworld@gmail.com" style="color: white;">travepediaworld@gmail.com</a>
+           </span>
+        </p>
     </footer>
-    
 </body>
 </html>

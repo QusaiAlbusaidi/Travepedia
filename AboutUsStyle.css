@@ -68,16 +68,3 @@
 }
 
 
-footer {
-    background-color: #4B0082;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 50px;
-}
-
-
-.nav-links a.active {
-    color: #007BFF;
-    border-bottom: 2px solid #007BFF;
-}

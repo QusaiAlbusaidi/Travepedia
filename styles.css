@@ -86,6 +86,10 @@ nav {
 .nav-links a:hover {
     color: #007BFF;
 }
+.nav-links a.active {
+    color: #007BFF;
+    border-bottom: 2px solid #007BFF;
+}
 
 .contact-btn {
     background-color: #4B0082;
@@ -112,11 +116,9 @@ nav {
 .btn:hover {
     background-color: #0056b3;
 }
-
 footer {
     background-color: #4B0082;
     color: white;
     text-align: center;
     padding: 20px;
-    margin-top: 50px;
 }
