@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>Feedback page</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+    .form-box {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);}
+</style>
+</head>    
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+            <img src="TravepediaWW.png" alt="Travepedia Logo">
+            <span class="logotext"><a href="index.html">Travepedia</a></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="Services.html">Services page </a></li>
+                <li><a href="HolidayPackages.html">Holiday Packages</a></li>
+                <li><a href="#">Luxury Concierge page</a></li>
+                <li><a href="#">Experience Oman</a></li>
+                <li><a href="Feedback.html">Feedback</a></li>
+                <li><a href="#" class="contact-btn">Get In Touch</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="form-box" style="margin: 50px;">
+        <form method="post" action="mailto:">
+        <label style="font-family: Arial;">Name:</label>
+        <input type="text" name="name"></br></br>
+        <label style="font-family: Arial;">Email:</label>
+        <input type="text" name="email"></br></br>
+        <label style="font-family: Arial;">Message:</label></br>
+        <textarea name="message" rows="4" cols="50"></textarea></br></br>
+        <input type="submit" value="Send an email" style="background-color: purple; padding: 10px 20px; border-radius: 5px;color: black; font-weight: bold;">
+        </form>
+    </div>
+</body>
+</html>
