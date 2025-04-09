@@ -3,87 +3,136 @@
     <title>Services page</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        .services-bg {background-image: url(servicesBG.jpg); background-size: cover; background-position: center;}
-        h3,h1 {color: black;}
-        .subtitle {font-size: 13pt; text-indent: 200pt;font-weight: bold;color: orange;}
-        .services-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
-        max-width: 1200px;
-        margin: 0 auto;}
-        .service-box {
-        flex: 1;
-        min-width: 250px;
-        max-width: 300px;
-        background-color: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);}
-        .service-box h2 {
-        color: #333;
-        margin-top: 0;
-        border-bottom: 2px solid #eee;
-        padding-bottom: 10px;}
-        .service-box p {
-        color: #666;
-        line-height: 1.5;}
-        .serviceBtn {background-color: #4B0082; padding: 10px 20px; border-radius: 5px;color: white; font-weight: bold;}
-        .serviceBtn:hover {background-color: #5e1c8d}
+        .services-hero {
+            background-image: url(BG4.jpg);
+            background-position: center;
+            height: 800px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            background-size:cover;
+        }
         
-
+        .services-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .services-hero h3 {
+            font-size: 1.5rem;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .service-box {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        
+        .service-box h2 {
+            color: #4B0082;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .service-box p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .serviceBtn {
+            background-color: #4B0082;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .serviceBtn:hover {
+            background-color: #5a1a8a;
+        }
+        
+        footer {
+            background-color: #4B0082;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+        }
     </style>
-    </head>
-    <body>
-        <header>
-            <nav>
-                <div class="logo">
-                    <img src="TravepediaWW.png" alt="Travepedia Logo">
-                    <span class="logotext"><a href="index.html"> Travepedia </a></span>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="AboutUs.html">About Us</a></li>
-                    <li><a href="Services.html" class="active">Services</a></li>
-                    <li><a href="HolidayPackages.html">Holiday Packages</a></li>
-                    <li><a href="luxury.html">Luxury Concierge</a></li>
-                    <li><a href="discover oman.html">Experience Oman</a></li>
-                    <li><a href="Feedback.html">Feedback</a></li>
-                    <li><a href="#" class="contact-btn">Contact Us</a></li>
-                </ul>
-            </nav>
-        </header>
-    <div class="services-bg">
-        <h1 style="text-align: center; font-size: 50pt;">Travel services</h1>
-        <h3 style="text-align: center;font-weight: bold;">Elevate your travel venture with us</h3>
-    </br></br></br></br></br>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="TravepediaWW.png" alt="Travepedia Logo">
+                <span class="logotext"><a href="index.html">Travepedia</a></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="Services.html" class="active">Services</a></li>
+                <li><a href="HolidayPackages.html">Holiday Packages</a></li>
+                <li><a href="luxury.html">Luxury Concierge</a></li>
+                <li><a href="discover oman.html">Experience Oman</a></li>
+                <li><a href="Feedback.html">Feedback</a></li>
+                <li><a href="contact us.html" class="contact-btn">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="services-hero">
+        <h1>Travel Services</h1>
+        <h3>Elevate your travel venture with us</h3>
     </div>
-    <div>
-        <p class="subtitle">YOUR DESIRED JOURNEY WITH SEAMLESS TRAVEL SOLUTIONS</p>
-    </div>
-    </br>
+    
     <div class="services-container">
         <div class="service-box">
-            <h2>Holiday travel packages</h2>
-            <p>We provide flight deals to almost every country. With a few easy steps, you can be set on a journey of your life. </p>
-            <a style="text-decoration: none;" href="HolidayPackages.html" class="serviceBtn">Holiday Packages</a>
+            <h2>Holiday Travel Packages</h2>
+            <p>We provide flight deals to almost every country. With a few easy steps, you can be set on a journey of your life.</p>
+            <a href="HolidayPackages.html" class="serviceBtn">Holiday Packages</a>
         </div>
+        
         <div class="service-box">
-            <h2>Luxury concierge</h2>
-            <p>At Travepedia, we understand that luxury travel is not only about the destination, but about the entire journey. Therefore, we've curated a selection
-                luxury packages that redefine the way you experience the world.</p>
-            <a style="text-decoration: none;" href="#" class="serviceBtn">Luxury Concierge page</a>
+            <h2>Luxury Concierge</h2>
+            <p>At Travepedia, we understand that luxury travel is not only about the destination, but about the entire journey. We've curated luxury packages that redefine how you experience the world.</p>
+            <a href="luxury.html" class="serviceBtn">Luxury Concierge</a>
         </div>
+        
         <div class="service-box">
             <h2>Experience Oman</h2>
-            <p>We've setup an itenerary to oman's rich heritage destinations and breathtaking landscapes with picturesque wadis, 
-                lands that call you back, even in your memories.</p>
-            <a style="text-decoration: none;" href="#" class="serviceBtn">Experience Oman</a>
+            <p>We've setup an itinerary to Oman's rich heritage destinations and breathtaking landscapes with picturesque wadis, lands that call you back, even in your memories.</p>
+            <a href="discover oman.html" class="serviceBtn">Experience Oman</a>
         </div>
     </div>
-    <br/>
-    </body>
+    
     <footer>
         <p>&copy; 2025 Travepedia. All rights reserved.</p>
     </footer>
+</body>
 </html>
