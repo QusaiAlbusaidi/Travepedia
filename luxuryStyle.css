@@ -1,7 +1,7 @@
 
 .luxuryHero {
     height: 500px;
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('luxury-resort.jpg');
+    background-image: url(BG11.jpg);
     background-size: cover;
     background-position: center;
     display: flex;
@@ -14,14 +14,13 @@
 .luxuryHero h1 {
     font-size: 3.5rem;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    
 }
 
 .luxuryIntro {
     text-align: center;
     padding: 60px 20px;
     max-width: 1000px;
-    margin: 0 auto;
 }
 
 .luxuryIntro h2 {
@@ -37,6 +36,7 @@
     height: 250px;
     background-size: cover;
     background-position: center;
+    padding-top: 15%;
 }
 
 .packageContent {
