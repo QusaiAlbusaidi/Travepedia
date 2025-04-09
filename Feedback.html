@@ -3,30 +3,73 @@
 <title>Feedback page</title>
 <link rel="stylesheet" href="styles.css">
 <style>
-    .form-box {
-    flex: 1;
-    min-width: 250px;
-    max-width: 400px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);}
-    footer {
-    background-color: #4B0082;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 50px;}
-    body {display: flex;
-        flex-direction: column;
-        min-height: 100vh;}
-    .contact-btn {
-    background-color: #4B0082;
-    padding: 10px 20px;
-    border-radius: 5px;
-    color: black;}
-    .contact-btn:hover {
-    background-color: #814aa8;}
+   body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+    }
+    .contactBtn {
+        background-color: #4B0082;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 4px;
+    }
+    
+    .formContainer {
+        display: flex;
+        justify-content: center;
+        padding: 30px;
+    }
+    
+    .formBox {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 500px;
+        border: 1px solid #ddd;
+    }
+    
+    .formBox h2 {
+        color: #4B0082;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .formGroup {
+        margin-bottom: 20px;
+    }
+    
+    .formGroup label {
+        display: block;
+        margin-bottom: 8px;
+        color: #4B0082;
+        font-weight: bold;
+    }
+    
+    .formGroup input,
+    .formGroup textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .formGroup textarea {
+        height: 120px;
+    }
+    
+    .submitBtn {
+        background-color: #4B0082;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        width: 100%;
+        font-size: 16px;
+    } 
 </style>
 </head>    
 <body style="background-image: url(airplaneBG.png); background-size: cover; background-position: center;">
@@ -47,20 +90,32 @@
             </ul>
         </nav>
     </header>
-    <div class="form-box" style="margin: 50px;margin-bottom: 20%; flex: 1;">
-        <p style="font-weight: bold;">Your opinion matters. Help us improve our website by giving us your feedback in detail!</p>
-        <form method="post" action="mailto:https://httpbin.org/get">
-            <label style="font-family: Arial;">Name:</label>
-            <input type="text" name="name"></br></br>
-            <label style="font-family: Arial;">Email:</label>
-            <input type="text" name="email"></br></br>
-            <label style="font-family: Arial;">Message:</label></br>
-            <textarea name="message" rows="4" cols="50"></textarea></br></br>
-            <input type="submit" value="Send an email" class="contact-btn">
-        </form>
+    <br/>
+    <div class="formContainer">
+        <div class="formBox">
+            <h2>Share Your Feedback</h2>
+            <p style="text-align: center; margin-bottom: 20px;">We value your opinion. Please share your experience with us.</p>
+            
+            <form method="post" action="mailto:https://httpbin.org/get">
+                <div class="formGroup">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="formGroup">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" required>
+                </div>
+                
+                <div class="formGroup">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="submitBtn" style="font-weight: bold;">Submit Feedback</button>
+            </form>
+        </div>
     </div>
-
-    
 </body>
 <footer>
     <p>&copy; 2025 Travepedia. All rights reserved.</p>
