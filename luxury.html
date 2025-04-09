@@ -1,135 +1,15 @@
-<html>
-    <head>
-      
-      <link rel="stylesheet" href="styles.css">
-        <style>
-          
-            .av:hover {
-            background-color: #4B3F72;
-             transition: background-color 0.3s ease, color 0.3s ease;
-}   
-
-            
-            
-            .trip{
-                position: relative;
-               height: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                 color: white;
-                background-image: url("travel.jpg"); 
-                background-position: center;
-                background-size: cover;
-
-                
-                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                text-align:center;
-
-                color: rgb(249, 255, 254);
-               
-                margin-top: 1%;
-                margin-bottom:100;}
-
-
-        
-            .trip h1{
-                 font-size: 48px;
-                margin-top:12%; }
-                 
-
-
-            .luxury{
-                background-color:#4B3F72;
-                background-position: left;
-            }
-            .oman {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 80px;
-    gap: 0%;
-  }
-            .muscat {
-    background-image: url("مسقط، سلطنة عمان 🇴🇲.jpeg");
-    background-position:-120;
-    width: 150%;
-    height: 600px;
-    background-color: #007bff;
-    color: white;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 20px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    
-    
-    /* Flexbox properties */
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: flex-end;   /* Align to the bottom */
-    text-align: center;      /* Center text */
-}
-
-    .nizwa{background-image: url("Nizwa is one of Oman’s oldest cities and a….jpeg");
-    background-position:center;
-    width: 100%;
-    height: 600px;
-    background-color: #007bff;
-    color: white;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 20px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 90;
-    
-    
-    /* Flexbox properties */
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: flex-end;   /* Align to the bottom */
-    text-align: center;      /* Center text */}
-
-    .salalah{background-image: url("salalah.jpeg");
-    background-position:center;
-    width: 100%;
-    height: 600px;
-    background-color: #007bff;
-    color: white;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 20px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 25%;
-    
-    
-    /* Flexbox properties */
-    display: flex;
-    justify-content: center; /* Center horizontally */
-
-    align-items: flex-end;   /* Align to the bottom */
-    text-align: center;    }
-    footer {
-    background-color: #4B0082;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 50px;
-}
-      </style>
-      <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-      <header>
+<html lang="en">
+<head>
+    <title>Luxury Concierge</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="luxuryStyle.css">
+</head>
+<body>
+    <header>
         <nav>
             <div class="logo">
                 <img src="TravepediaWW.png" alt="Travepedia Logo">
-                <span class="logotext"><a href="index.html"> Travepedia </a></span>
+                <span class="logotext"><a href="index.html">Travepedia</a></span>
             </div>
             <ul class="nav-links">
                 <li><a href="AboutUs.html">About Us</a></li>
@@ -142,46 +22,84 @@
             </ul>
         </nav>
     </header>
-    <br/>
-      <div class = "trip">
-        <h1> WE DELIVER LUXURY TRAVEL EXPERIENCES </h>
-        </h1>
-      </div>
-    <div style="display: flex; justify-content: center; gap: 80px;" class="av">
-        <div style="background-color: #4B3F72; color: white; padding: 10px 20px; border-radius: 10cqh;">
-          <h1>Luxury Travel Rewards, Seamlessly Delivered</h1>
-          <p>We believe that the best rewards aren't things—they're experiences. We create high-end, fully managed travel rewards that recognize excellence and leave a lasting impact.</p>
+    
+    <section class="luxuryHero">
+        <div>
+            <h1>Exclusive Luxury Travel Experiences</h1>
+            <p>Curated journeys for the discerning traveler</p>
         </div>
-
-        <div style="background-color: #4B3F72; color: white; padding: 10px 20px; border-radius: 10cqh;">
-          <h1>No Logistics. No Hassle. Just</h1>
-          <h2>Exceptional Travel.</h2>
-          <p>Forget group trips and DIY planning. Travelers choose from curated, pre-vetted experiences, and our concierge team handles everything—flights, accommodations, excursions.</p>
+    </section>
+    
+    <section class="luxuryIntro">
+        <h2>Why Choose Our Luxury Concierge Service?</h2>
+        <p>We believe luxury travel should be effortless and unforgettable. Our concierge team handles every detail so you can focus on enjoying the experience.</p>
+    </section>
+    
+      
+        <div class="packageCard">
+            <div class="packageImage" style="background-image: url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+            <div class="packageContent">
+                <h3>Private Island Retreat</h3>
+                <p>Experience ultimate privacy on your own island paradise with a personal staff dedicated to your comfort. Includes private yacht transfers and all-inclusive gourmet dining.</p>
+                <div class="packagePrice">From $12,500/night</div>
+                <a href="" class="bookBtn">Book Now</a>
+            </div>
         </div>
-      </div>
-      <h1 style="text-align: center; margin-top: 78px;">Why Luxury Concierge Travel?</h1>
-      <p style="text-align: center;"> rewards are forgettable. Ours aren’t. We’ve designed individual luxury travel experiences that feel as exclusive as the achievement itself—effortless for companies, unforgettable for travelers.
-      </p>
-      <div class="oman">
-        <div class="muscat">
-        <h1 style="background-color: #4B3F72; color: white; padding: 10px 20px; border-radius: 10cqh"> muscat</h1>
-       
-        </div>
-    <div class = "nizwa">
-        <h1 style="background-color: #4B3F72; color: white; padding: 10px 20px; border-radius: 10cqh"> nizwa</h1>
         
-
-    </div>
-"   <div class="salalah">
-    <h1 style="background-color: #4B3F72; color: white; padding: 10px 20px; border-radius: 10cqh"> salalah</h1>
+        <div class="packageCard">
+            <div class="packageImage" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+            <div class="packageContent">
+                <h3>European Tour</h3>
+                <p>Private jet tour of Europe's most exclusive destinations with VIP access to cultural landmarks, Michelin-starred dining, and luxury accommodations.</p>
+                <div class="packagePrice">From $85,000/10 days</div>
+                <a href="" class="bookBtn">Book Now</a>
+            </div>
+        </div>
         
-
-</div>  
-
-  </div>
-  
-    </body>
-    <footer>
-      <p>&copy; 2025 Travepedia. All rights reserved.</p>
-  </footer>
-</html>
+        
+        <div class="packageCard">
+            <div class="packageImage" style="background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+            <div class="packageContent">
+                <h3>Safari Adventure</h3>
+                <p>Luxury safari experience with private guides, five-star tented camps, and exclusive wildlife encounters in Africa's most pristine reserves.</p>
+                <div class="packagePrice">From $28,000/week</div>
+                <a href="" class="bookBtn">Book Now</a>
+            </div>
+        </div>
+        
+        
+        <div class="packageCard">
+            <div class="packageImage" style="background-image: url('https://images.unsplash.com/photo-1535827841776-24afc1e255ac?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+            <div class="packageContent">
+                <h3>Middle Eastern</h3>
+                <p>Discover the luxury of the Middle East with private tours of historic sites, stays in royal suites, and personalized shopping experiences.</p>
+                <div class="packagePrice">From $42,000/12 days</div>
+                <a href="" class="bookBtn">Book Now</a>
+            </div>
+        </div>
+        
+        
+        <div class="package-card">
+            <div class="packageImage" style="background-image: url('https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+            <div class="packageContent">
+                <h3>Asian Journey</h3>
+                <p>Rejuvenate at world-class spas and wellness retreats across Bali, Thailand, and Japan with personalized treatments and private instructors.</p>
+                <div class="packagePrice">From $35,000/2 weeks</div>
+                <a href="" class="bookBtn">Book Now</a>
+            </div>
+        </div>
+        
+        <div class="package-card">
+            <div class="packageImage" style="background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+            <div class="packageContent">
+                <h3>Polar Expedition</h3>
+                <p>Luxury expedition to the Arctic or Antarctic with private cabins, expert guides, and exclusive wildlife viewing opportunities.</p>
+                <div class="packagePrice">From $65,000/expedition</div>
+                <a href="" class="bookBtn">Book Now</a>
+            </div>
+        </div>
+</body>
+<footer>
+  <p>&copy; 2025 Travepedia. All rights reserved.</p>
+</footer>
+</html
