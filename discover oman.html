@@ -5,128 +5,69 @@
   
   <link rel="stylesheet" href="styles.css">
     
-  <style>
-      footer {
-    background-color: #4B0082;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 50px;
-}
-     
-.siii {
-    
-    font-family: Arial, sans-serif;
-    font-size: 70px;
-    font-weight: bold;
-    gap: 5%;
-   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    justify-content: center;
-   
-}
-
-    .experience {
-      color:rgb(14, 16, 117);
-      position: relative;
-      margin-top: 20%;
-    }
-    .experience:hover {
-      color:#F2A654;
-    }
-    .oman {
-      color: #F2A654;
-      margin-top: 20%;
-    }
-    .oman:hover {
-      color:rgb(14, 16, 117);
-    }
-    .hero {
-      background-image: url(03d7cc02-a7f4-4986-9314-7683df2aff2f.jpeg);
-      background-size: cover;
-      background-position: center;
-      height: 400px;
-      display: flex;
-      flex-direction: column;
-      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      border-top-left-radius: 20%;
-      justify-content: center;
-      align-items: center;
-      color: white;
-
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-      margin-top: 100px
-    }
-    
-    .hero h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-    .hero h1:hover{color:#F2A654;}
-    
-    .hero p {
-      font-size: 18px;
-      text-align: center;
-    }
-
-    .pic {
-      background-image: url("bahla.jpeg");
-      background-size: cover;
-      backdrop-filter: gc;
-      background-position: center;
-      height: 400px;
-      width: 100%;
-      display: flex; 
-      flex-direction:column;
-       border-top-left-radius: 20%;
-      text-align:left;
-      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #eee3e3;
-      text-shadow: 1px 1px 2px rgba(123, 34, 34, 0.5);
-      margin-top: 130px; /* Added margin for space */
-    }
-    
-    .pic h1 {
-      font-size: 36px;
-      margin-top: 180px;
+  <style>     
+ .title {
+          text-align: center;
+          padding: 120px 40px;
+          background-color: #f8f4ff;
+          background-image: url(BG12.jpg);
+          background-size: cover;
+          background-position: center;
+          margin-top: 12%;
+      }
       
-    }
-    .pic h1:hover{color: #F2A654}
-    
-    .pic p {
-      font-size: 25px;
-      background-color: #d8b590;
-    }
-    .camp{ background-image: url("Oman-Desert-Camping.webp");
-      background-size: cover;
-      background-position: top;
-      height: 500px;
-      display: flex; 
-      flex-direction:column;
-       border-top-left-radius: 20%;
+      .title h1 {
+          font-size: 48;
+          color: #4B0082;
+      }
       
-      color: hsl(120, 12%, 97%);
-      text-shadow: 1px 1px 2px rgba(123, 34, 34, 0.5);
-      font-family:'Segoe UI', Tahoma,Geneva, Verdana, sans-serif;
-    margin-top: 10%;}
-      .camp h {
-      font-size: 36px;
-      margin-top: 260px;
-    }
-    
-    .camp p {
-      font-size: 25px;
-    }
-     
+      .title p {
+          color: #ffffff;
+      }
+      
+      
+      .experience{
+          display: flex;
+          margin: 40px auto;
+          padding: 0 20px;
+          gap: 30px;
+      }
+      
+      .experience-card {
+          flex: 1;
+          min-width: 300px;
+          border-radius: 8px;
+      }
+      
+      
+      .experience-image {
+          height: 250px;
+          background-size: cover;
+          background-position: center;
+      }
+      
+      .experience-content {
+          padding: 25px;
+          background: white;
+      }
+      
+      .experience-content h2 {
+          color: #4B0082;
+      }
+      
+      .experience-content p {
+          color: #666;
+          line-height: 1.6;
+      }
+      
   </style>
-  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
     <nav>
         <div class="logo">
             <img src="TravepediaWW.png" alt="Travepedia Logo">
-            <span class="logotext"><a href="index.html"> Travepedia </a></span>
+            <span class="logotext"><a href="index.html">Travepedia</a></span>
         </div>
         <ul class="nav-links">
             <li><a href="AboutUs.html">About Us</a></li>
@@ -138,23 +79,39 @@
             <li><a href="contact us.html" class="contact-btn">Contact Us</a></li>
         </ul>
     </nav>
-</header>
-  <div class="siii">
-    <span class="experience">experience</span>
-    <span class="oman">oman</span>
+  </header>
+  <br/>
+  <div class="title">
+      <h1>Experience Oman</h1>
+      <p>Discover the breathtaking landscapes, rich culture, and unique adventures that Oman has to offer</p>
   </div>
-  <div class="hero">
-    <h1>Nature & Adventure</h1>
-    <p>Oman is the land of adventures, starting from exploring the Hoota Cave, going through the experience of zip-lining in Musandam Governorate</p>
+  
+  <div class="experience">
+      <div class="experience-card">
+          <div class="experience-image" style="background-image: url('03d7cc02-a7f4-4986-9314-7683df2aff2f.jpeg');"></div>
+          <div class="experience-content">
+              <h2>Nature & Adventure</h2>
+              <p>Oman is the land of adventures, from exploring the Hoota Cave to zip-lining in Musandam Governorate. Experience the stunning natural beauty of Oman's mountains, wadis, and coastline.</p>
+          </div>
+      </div>
+      
+      <div class="experience-card">
+          <div class="experience-image" style="background-image: url('bahla.jpeg');"></div>
+          <div class="experience-content">
+              <h2>Culture & Heritage</h2>
+              <p>The Sultanate of Oman is globally renowned for its unique culture and rich heritage. Visit ancient forts, traditional souqs, and UNESCO World Heritage sites that tell the story of Oman's history.</p>
+          </div>
+      </div>
+      
+      <div class="experience-card">
+          <div class="experience-image" style="background-image: url('Oman-Desert-Camping.webp');"></div>
+          <div class="experience-content">
+              <h2>Special Interests</h2>
+              <p>From desert camping under the stars to luxury spa retreats, Oman offers a wide range of special interest activities to satisfy every traveler's unique preferences.</p>
+          </div>
+      </div>
   </div>
-  <div class="pic">
-    <h1>Culture</h1>
-    <p>The Sultanate of Oman is globally renowned for its unique culture and rich heritage</p>
-  </div>
-  <div class = "camp">
-    <h>Special Interests</h>
-    <p>If you are looking for special interests, the Sultanate of Oman offers a wide range of options ensure that you satisfy special interest.</p>
-  </div>
+  
 </body>
 <footer>
   <p>&copy; 2025 Travepedia. All rights reserved.</p>
