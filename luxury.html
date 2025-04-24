@@ -1,105 +1,133 @@
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luxury Concierge</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="luxuryStyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <img src="TravepediaWW.png" alt="Travepedia Logo">
-                <span class="logotext"><a href="index.html">Travepedia</a></span>
+        <nav class="navbar navbar-white bg-white p-3">
+            <div class="container-fluid">
+                <div class="align-items-center">
+                    <img src="TravepediaWW.png" alt="Logo" width="70" class="me-2">
+                    <a href="index.html" class="navbar-brand fs-3 fw-bold text-dark">Travepedia</a>
+                </div>
+                <ul class="navbar-nav flex-row gap-5">
+                    <li class="nav-item"><a href="AboutUs.html" class="nav-link fw-bold">About Us</a></li>
+                    <li class="nav-item"><a href="Services.html" class="nav-link fw-bold">Services</a></li>
+                    <li class="nav-item"><a href="HolidayPackages.html" class="nav-link fw-bold">Holiday Packages</a></li>
+                    <li class="nav-item"><a href="luxury.html" class="nav-link fw-bold text-primary">Luxury Concierge</a></li>
+                    <li class="nav-item"><a href="discover oman.html" class="nav-link fw-bold">Experience Oman</a></li>
+                    <li class="nav-item"><a href="Feedback.html" class="nav-link fw-bold">Feedback</a></li>
+                    <li class="nav-item"><a href="contact us.html" class="btn btn-primary fw-bold">Contact Us</a></li>
+                </ul>
             </div>
-            <ul class="nav-links">
-                <li><a href="AboutUs.html">About Us</a></li>
-                <li><a href="Services.html">Services</a></li>
-                <li><a href="HolidayPackages.html">Holiday Packages</a></li>
-                <li><a href="luxury.html" class="active">Luxury Concierge</a></li>
-                <li><a href="discover oman.html">Experience Oman</a></li>
-                <li><a href="Feedback.html">Feedback</a></li>
-                <li><a href="contact us.html" class="contact-btn">Contact Us</a></li>
-            </ul>
         </nav>
     </header>
+
     
-    <section class="luxuryHero">
-        <div>
-            <h1>Exclusive Luxury Travel Experiences</h1>
-            <p>Curated journeys for the discerning traveler</p>
+    <div class="  vh-100 d-flex align-items-center justify-content-center text-white" style="background:  url('BG11.jpg') center/cover no-repeat;">
+        <div class=" text-center">
+            <h1 class="display-3 fw-bold mb-3">Exclusive Luxury Travel Experiences</h1>
+            <p class="lead fs-3 mb-0">Curated journeys for the discerning traveler</p>
+        </div>
+    </div>
+
+    
+    <section class="py-5">
+        <div class="container text-center" style="max-width: 1000px;">
+            <h2 class="text-primary fw-bold mb-4 display-5">Why Choose Our Luxury Concierge Service?</h2>
+            <p class="fs-5 text-muted">We believe luxury travel should be effortless and unforgettable. Our concierge team handles every detail so you can focus on enjoying the experience.</p>
         </div>
     </section>
+
     
-    <section class="luxuryIntro">
-        <h2>Why Choose Our Luxury Concierge Service?</h2>
-        <p>We believe luxury travel should be effortless and unforgettable. Our concierge team handles every detail so you can focus on enjoying the experience.</p>
-    </section>
-    
-      
-        <div class="packageCard">
-            <div class="packageImage" style="background-image: url(BG5.jpg)"></div>
-            <div class="packageContent">
-                <h3>Private Island Retreat</h3>
-                <p>Experience ultimate privacy on your own island paradise with a personal staff dedicated to your comfort. Includes private yacht transfers and all-inclusive gourmet dining.</p>
-                <div class="packagePrice">From $12,500/night</div>
-                <a href="" class="bookBtn">Book Now</a>
+    <div class="container pb-5">
+        <div class="row g-4">
+        
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-img-top" style="height: 250px; background: url('BG5.jpg') center/cover no-repeat;"></div>
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Private Island Retreat</h3>
+                        <p class="card-text text-muted">Experience ultimate privacy on your own island paradise with a personal staff dedicated to your comfort.</p>
+                        <div class="fs-4 fw-bold text-primary mb-3">From $12,500/night</div>
+                        <a href="#" class="btn btn-primary w-100">Book Now</a>
             </div>
-        </div>
-        
-        <div class="packageCard">
-            <div class="packageImage" style="background-image: url(BG6.jpg);"></div>
-            <div class="packageContent">
-                <h3>European Tour</h3>
-                <p>Private jet tour of Europe's most exclusive destinations with VIP access to cultural landmarks, Michelin-starred dining, and luxury accommodations.</p>
-                <div class="packagePrice">From $85,000/10 days</div>
-                <a href="" class="bookBtn">Book Now</a>
             </div>
-        </div>
-        
-        
-        <div class="packageCard">
-            <div class="packageImage" style="background-image: url(BG7.jpg);"></div>
-            <div class="packageContent">
-                <h3>Safari Adventure</h3>
-                <p>Luxury safari experience with private guides, five-star tented camps, and exclusive wildlife encounters in Africa's most pristine reserves.</p>
-                <div class="packagePrice">From $28,000/week</div>
-                <a href="" class="bookBtn">Book Now</a>
             </div>
-        </div>
-        
-        
-        <div class="packageCard">
-            <div class="packageImage" style="background-image: url(BG8.jpg);"></div>
-            <div class="packageContent">
-                <h3>Middle Eastern</h3>
-                <p>Discover the luxury of the Middle East with private tours of historic sites, stays in royal suites, and personalized shopping experiences.</p>
-                <div class="packagePrice">From $42,000/12 days</div>
-                <a href="" class="bookBtn">Book Now</a>
+            
+            
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-img-top" style="height: 250px; background: url('BG6.jpg') center/cover no-repeat;"></div>
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">European Tour</h3>
+                        <p class="card-text text-muted">Private jet tour of Europe's most exclusive destinations with VIP access to cultural landmarks.</p>
+                        <div class="fs-4 fw-bold text-primary mb-3">From $85,000/10 days</div>
+                        <a href="#" class="btn btn-primary w-100">Book Now</a>
             </div>
-        </div>
-        
-        
-        <div class="package-card">
-            <div class="packageImage" style="background-image: url(BG9.jpg);"></div>
-            <div class="packageContent">
-                <h3>Asian Journey</h3>
-                <p>Rejuvenate at world-class spas and wellness retreats across Bali, Thailand, and Japan with personalized treatments and private instructors.</p>
-                <div class="packagePrice">From $35,000/2 weeks</div>
-                <a href="" class="bookBtn">Book Now</a>
             </div>
-        </div>
-        
-        <div class="package-card">
-            <div class="packageImage" style="background-image: url(BG10.jpg);"></div>
-            <div class="packageContent">
-                <h3>Polar Expedition</h3>
-                <p>Luxury expedition to the Arctic or Antarctic with private cabins, expert guides, and exclusive wildlife viewing opportunities.</p>
-                <div class="packagePrice">From $65,000/expedition</div>
-                <a href="" class="bookBtn">Book Now</a>
             </div>
+            
+            
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-img-top" style="height: 250px; background: url('BG7.jpg') center/cover no-repeat;"></div>
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Safari Adventure</h3>
+                        <p class="card-text text-muted">Luxury safari experience with private guides and five-star tented camps in Africa.</p>
+                        <div class="fs-4 fw-bold text-primary mb-3">From $28,000/week</div>
+                        <a href="#" class="btn btn-primary w-100">Book Now</a>
+              </div>
+            </div>
+            </div>
+            
+            
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-img-top" style="height: 250px; background: url('BG8.jpg') center/cover no-repeat;"></div>
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Middle Eastern</h3>
+                        <p class="card-text text-muted">Discover the luxury of the Middle East with private tours and stays in royal suites.</p>
+                        <div class="fs-4 fw-bold text-primary mb-3">From $42,000/12 days</div>
+                        <a href="#" class="btn btn-primary w-100">Book Now</a>
+            </div>
+            </div>
+            </div>
+            
+            
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-img-top" style="height: 250px; background: url('BG9.jpg') center/cover no-repeat;"></div>
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Asian Journey</h3>
+                        <p class="card-text text-muted">Rejuvenate at world-class spas and wellness retreats across Asia.</p>
+                        <div class="fs-4 fw-bold text-primary mb-3">From $35,000/2 weeks</div>
+                        <a href="#" class="btn btn-primary w-100">Book Now</a>
+                 </div>
+             </div>
+            </div>
+            
+            
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-img-top" style="height: 250px; background: url('BG10.jpg') center/cover no-repeat;"></div>
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Polar Expedition</h3>
+                        <p class="card-text text-muted">Luxury expedition to the Arctic or Antarctic with private cabins.</p>
+                        <div class="fs-4 fw-bold text-primary mb-3">From $65,000/expedition</div>
+                        <a href="#" class="btn btn-primary w-100">Book Now</a>
         </div>
+        </div>
+        </div>
+ </div>
+    </div>
+
+    <footer class="bg-primary text-white py-4 text-center">
+        <p class="mb-0">&copy; 2025 Travepedia. All rights reserved.</p>
+    </footer>
+
 </body>
-<footer>
-  <p>&copy; 2025 Travepedia. All rights reserved.</p>
-</footer>
-</html
+</html>
