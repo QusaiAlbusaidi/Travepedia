@@ -34,7 +34,64 @@
         </div>
     </div>
 
-    
+    <div class="container my-5">
+        <div class="card shadow-sm border-0">
+          <div class="card-body p-4">
+            <h3 class="text-dark mb-4">Trip Budget Estimator</h3>
+            
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Travelers</label>
+                <input type="number" class="form-control" min="1" value="1" id="travelers">
+              </div>
+              
+              <div class="col-md-6">
+                <label class="form-label">Nights</label>
+                <input type="number" class="form-control" min="1" value="1" id="nights">
+              </div>
+              
+              <div class="col-12">
+                <label class="form-label">Accommodation Level</label>
+                <form action="https://httpbin.org/get" method="get">
+                <select class="form-select" id="accommodation">
+                  <option value="299.83">Italy ($299+/night)</option>
+                  <option value="277.66" >Japan ($277+/night)</option>
+                  <option value="314.14">South Africa ($314+/night)</option>
+                  <option value="362.37">Canada ($362+/night)</option>
+                  <option value="399.8">Brazil ($399+/night)</option>
+                  <option value="145.36" selected>Thailand ($145+/night)</option>
+                  <option value="328.42">France ($328+/night)</option>
+                  <option value="269.15">New Zealand ($269+/night)</option>
+                </select>
+                </form>
+              </div>
+              
+              <div class="col-12 mt-4">
+                <button class="btn btn-primary w-100" onclick="calculateBudget()">
+                  Calculate Estimate
+                </button>
+              </div>
+              
+              <div class="col-12 text-center mt-3" id="result" style="display:none;">
+                <h4 class="text-success">Estimated Cost: <span id="totalCost">$0</span></h4>
+            </div>
+         </div>
+        </div>
+    </div>
+      </div>
+      
+      <script>
+        function calculateBudget() {
+          const travelers = document.getElementById('travelers').value;
+          const nights = document.getElementById('nights').value;
+          const accommodation = document.getElementById('accommodation').value;
+          const total = travelers * nights * accommodation;
+          
+          document.getElementById('totalCost').textContent = '$' + total.toLocaleString();
+          document.getElementById('result').style.display = 'block';
+        }
+      </script>
+
     <div class="container my-5">
     
         <h2 class="text-dark fw-bold mb-4 pb-2 border-bottom border-primary">Featured Holiday Packages</h2>
