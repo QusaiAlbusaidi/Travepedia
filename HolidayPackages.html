@@ -1,6 +1,8 @@
 
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Holiday Packages</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,30 +18,86 @@
                 <ul class="navbar-nav flex-row gap-5">
                     <li class="nav-item"><a href="AboutUs.html" class="nav-link fw-bold">About Us</a></li>
                     <li class="nav-item"><a href="Services.html" class="nav-link fw-bold">Services</a></li>
-                    <li class="nav-item"><a href="HolidayPackages.html" class="nav-link fw-bold">Packages</a></li>
-                    <li class="nav-item"><a href="luxury.html" class="nav-link fw-bold">Luxury</a></li>
-                    <li class="nav-item"><a href="discover oman.html" class="nav-link fw-bold">Oman</a></li>
+                    <li class="nav-item"><a href="HolidayPackages.html" class="nav-link fw-bold text-primary">Holiday Packages</a></li>
+                    <li class="nav-item"><a href="luxury.html" class="nav-link fw-bold">Luxury Concierge</a></li>
+                    <li class="nav-item"><a href="ExperienceOman.html" class="nav-link fw-bold">Experience Oman</a></li>
                     <li class="nav-item"><a href="Feedback.html" class="nav-link fw-bold">Feedback</a></li>
-                    <li class="nav-item"><a href="contact us.html" class="btn btn-primary fw-bold">Contact Us</a></li>
+                    <li class="nav-item"><a href="contactUs.html" class="btn btn-primary fw-bold">Contact Us</a></li>
                 </ul>
             </div>
         </nav>
     </header>
-
-    <div class=" vh-100 d-flex align-items-center justify-content-center text-white text-center py-5" style="background:url('https://images.unsplash.com/photo-1431274172761-fca41d930114?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;">
-        <div class="container">
+    <div class=" vh-100 d-flex align-items-center justify-content-center text-white" style="background:url('https://images.unsplash.com/photo-1431274172761-fca41d930114?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;">
+        <div class="text-center">
             <h1 class="display-3 fw-bold mb-3">World Holiday Packages</h1>
             <p class="lead fs-3">Discover amazing destinations across the globe</p>
         </div>
     </div>
 
-    
+    <div class="container my-5">
+        <div class="card shadow-sm border-0">
+          <div class="card-body p-4">
+            <h3 class="text-dark mb-4">Trip Budget Estimator</h3>
+            
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Travelers</label>
+                <input type="number" class="form-control" min="1" value="1" id="travelers">
+              </div>
+              
+              <div class="col-md-6">
+                <label class="form-label">Nights</label>
+                <input type="number" class="form-control" min="1" value="1" id="nights">
+              </div>
+              
+              <div class="col-12">
+                <label class="form-label">Accommodation Level</label>
+                <form action="https://httpbin.org/get" method="get">
+                <select class="form-select" id="accommodation">
+                  <option value="299.83">Italy ($299+/night)</option>
+                  <option value="277.66" >Japan ($277+/night)</option>
+                  <option value="314.14">South Africa ($314+/night)</option>
+                  <option value="362.37">Canada ($362+/night)</option>
+                  <option value="399.8">Brazil ($399+/night)</option>
+                  <option value="145.36" selected>Thailand ($145+/night)</option>
+                  <option value="328.42">France ($328+/night)</option>
+                  <option value="269.15">New Zealand ($269+/night)</option>
+                </select>
+                </form>
+              </div>
+              
+              <div class="col-12 mt-4">
+                <button class="btn btn-primary w-100" onclick="calculateBudget()">
+                  Calculate Estimate
+                </button>
+              </div>
+              
+              <div class="col-12 text-center mt-3" id="result" style="display:none;">
+                <h4 class="text-success">Estimated Cost: <span id="totalCost">$0</span></h4>
+            </div>
+         </div>
+        </div>
+    </div>
+      </div>
+      
+      <script>
+        function calculateBudget() {
+          const travelers = document.getElementById('travelers').value;
+          const nights = document.getElementById('nights').value;
+          const accommodation = document.getElementById('accommodation').value;
+          const total = travelers * nights * accommodation;
+          
+          document.getElementById('totalCost').textContent = '$' + total.toLocaleString();
+          document.getElementById('result').style.display = 'block';
+        }
+      </script>
+
     <div class="container my-5">
     
         <h2 class="text-dark fw-bold mb-4 pb-2 border-bottom border-primary">Featured Holiday Packages</h2>
         
-        <div class="table-responsive rounded-3 mb-5">
-            <table class="table table-hover table-bordered  mb-0">
+        <div class="table-responsive rounded-4 border mb-5">
+            <table class="table table-hover  mb-0">
                 
                 <thead class=" text-white">
                     <tr>
@@ -62,9 +120,11 @@
                             <div class="fw-bold text-primary">Romantic Venice & Florence</div>
                             <small class="text-muted">Includes gondola ride and wine tasting</small>
                         </td>
-                        <td class="align-middle text-center">7 Days / 6 Nights</td>
+                        <td class="p-4 align-middle text-center">
+                            <span class="badge bg-info text-dark">7 Days / 6 Nights</span>
+                        </td>
                         <td class="align-middle text-center">
-                            <span class="fw-bold text-primary ">$1,799</span>
+                            <span class="fw-bold text-success ">$1,799</span>
                             <small class="text-muted d-block">per person</small>
                         </td>
                         <td class="align-middle text-warning text-center">★★★★☆</td>
@@ -81,9 +141,11 @@
                             <div class="fw-bold text-primary">Tokyo & Kyoto Explorer</div>
                             <small class="text-muted">Bullet train experience included</small>
                         </td>
-                        <td class="align-middle text-center">10 Days / 9 Nights</td>
+                        <td class="p-4 align-middle text-center">
+                            <span class="badge bg-info text-dark">10 Days / 9 Nights</span>
+                        </td>
                         <td class="align-middle text-center">
-                            <span class="fw-bold text-primary">$2,499</span>
+                            <span class="fw-bold text-success">$2,499</span>
                             <small class="text-muted d-block">per person</small>
                         </td>
                         <td class="align-middle text-warning text-center">★★★★★</td>
@@ -100,9 +162,11 @@
                             <div class="fw-bold text-primary">Safari Adventure</div>
                             <small class="text-muted">Kruger National Park safari</small>
                         </td>
-                        <td class="align-middle text-center">8 Days / 7 Nights</td>
+                        <td class="p-4 align-middle text-center">
+                            <span class="badge bg-info text-dark">8 Days / 7 Nights</span>
+                        </td>
                         <td class="align-middle text-center">
-                            <span class="fw-bold text-primary">$2,199</span>
+                            <span class="fw-bold text-success">$2,199</span>
                             <small class="text-muted d-block">per person</small>
                         </td>
                         <td class="align-middle text-warning text-center">★★★★☆</td>
@@ -119,9 +183,11 @@
                             <div class="fw-bold text-primary">Rocky Mountains Tour</div>
                             <small class="text-muted">Banff and Jasper National Parks</small>
                         </td>
-                        <td class="align-middle text-center">9 Days / 8 Nights</td>
+                        <td class="p-4 align-middle text-center">
+                            <span class="badge bg-info text-dark">9 Days / 8 Nights</span>
+                        </td>
                         <td class="align-middle text-center">
-                            <span class="fw-bold text-primary">$2,899</span>
+                            <span class="fw-bold text-success">$2,899</span>
                             <small class="text-muted d-block">per person</small>
                         </td>
                         <td class="align-middle text-warning text-center">★★★★★</td>
@@ -137,9 +203,11 @@
                             <div class="fw-bold text-primary">Rio Carnival Experience</div>
                             <small class="text-muted">VIP tickets to Sambadrome</small>
                         </td>
-                        <td class="align-middle text-center">6 Days / 5 Nights</td>
+                        <td class="p-4 align-middle text-center">
+                            <span class="badge bg-info text-dark">6 Days / 5 Nights</span>
+                        </td>
                         <td class="align-middle text-center">
-                            <span class="fw-bold text-primary">$1,999</span>
+                            <span class="fw-bold text-success">$1,999</span>
                             <small class="text-muted d-block">per person</small>
                         </td>
                         <td class="align-middle text-warning text-center">★★★★☆</td>
@@ -156,9 +224,11 @@
                             <div class="fw-bold text-primary">Island Hopping</div>
                             <small class="text-muted">Phuket, Phi Phi, and Krabi</small>
                         </td>
-                        <td class="align-middle text-center">12 Days / 11 Nights</td>
+                        <td class="p-4 align-middle text-center">
+                            <span class="badge bg-info text-dark">12 Days / 11 Nights</span>
+                        </td>
                         <td class="align-middle text-center">
-                            <span class="fw-bold text-primary">$1,599</span>
+                            <span class="fw-bold text-success">$1,599</span>
                             <small class="text-muted d-block">per person</small>
                         </td>
                         <td class="align-middle text-warning text-center">★★★★★</td>
@@ -175,9 +245,11 @@
                             <div class="fw-bold text-primary">Paris & Provence</div>
                             <small class="text-muted">Eiffel Tower and lavender fields</small>
                         </td>
-                        <td class="align-middle text-center">8 Days / 7 Nights</td>
+                        <td class="p-4 align-middle text-center">
+                            <span class="badge bg-info text-dark">8 Days / 7 Nights</span>
+                        </td>
                         <td class="align-middle text-center">
-                            <span class="fw-bold text-primary">$2,299</span>
+                            <span class="fw-bold text-success">$2,299</span>
                             <small class="text-muted d-block">per person</small>
                         </td>
                         <td class="align-middle text-warning text-center">★★★★☆</td>
@@ -193,9 +265,11 @@
                             <div class="fw-bold text-primary">Lord of the Rings Tour</div>
                             <small class="text-muted">North and South Island adventure</small>
                         </td>
-                        <td class="align-middle text-center">14 Days / 13 Nights</td>
+                        <td class="p-4 align-middle text-center">
+                            <span class="badge bg-info text-dark">14 Days / 13 Nights</span>
+                        </td>
                         <td class="align-middle text-center">
-                            <span class="fw-bold text-primary">$3,499</span>
+                            <span class="fw-bold text-success">$3,499</span>
                             <small class="text-muted d-block">per person</small>
                         </td>
                         <td class="align-middle text-warning text-center">★★★★★</td>
@@ -208,7 +282,7 @@
         <div class="text-center my-4">
             <a href="#" class="btn btn-outline-primary px-4">View All Packages</a>
         </div>
-    </div>
+        </div>
 
     <footer class="bg-primary text-white py-4 text-center">
         <p class="mb-0">&copy; 2025 Travepedia. All rights reserved.</p>
