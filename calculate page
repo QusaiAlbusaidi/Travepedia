@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Cost Estimator - Travepedia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f4ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 30px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 12px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4B0082;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="number"], select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            background-color: #4B0082;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #5e2b9c;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #4B0082;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Travel Cost Estimator</h1>
+    <form id="costForm">
+        <label for="nights">Number of Nights (Desert Camping):</label>
+        <input type="number" id="nights" min="0" required>
+
+        <label for="trekkingTours">Number of Trekking Tours:</label>
+        <input type="number" id="trekkingTours" min="0" required>
+
+        <label for="dhowCruises">Number of Dhow Cruises:</label>
+        <input type="number" id="dhowCruises" min="0" required>
+
+        <label for="age">Your Age:</label>
+        <input type="number" id="age" min="1" required>
+
+        <button type="button" onclick="calculateCost()">Calculate Total Cost</button>
+    </form>
+
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    // This function calculates the total travel cost based on user inputs
+    function calculateCost() {
+        // Getting user inputs from the form
+        const nights = parseInt(document.getElementById('nights').value);
+        const trekkingTours = parseInt(document.getElementById('trekkingTours').value);
+        const dhowCruises = parseInt(document.getElementById('dhowCruises').value);
+        const age = parseInt(document.getElementById('age').value);
+
+        // Prices for each activity
+        const desertCampingPrice = 150; // per night
+        const trekkingTourPrice = 200;  // per tour
+        const dhowCruisePrice = 75;     // per cruise
+
+        // Calculate the base total cost using multiple operators (* and +)
+        let total = (nights * desertCampingPrice) + (trekkingTours * trekkingTourPrice) + (dhowCruises * dhowCruisePrice);
+
+        // Check if the user is elderly (above 60) to give 10% discount
+        if (age > 60) {
+            total = total - (total * 0.10); // Applying 10% discount
+        }
+
+        // Showing the final calculated amount with 2 decimal places
+        document.getElementById('result').innerHTML = `Your estimated travel cost is: $${total.toFixed(2)}`;
+    }
+</script>
+
+</body>
+</html>
