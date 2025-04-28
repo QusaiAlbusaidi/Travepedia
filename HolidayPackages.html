@@ -1,269 +1,21 @@
+
 <html>
-    <head>
-        <title>Holiday Packages</title>
-        <link rel="stylesheet" href="styles.css">
-        <style>
-            * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        header {
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #0066cc;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 20px;
-        }
-        
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav ul li a:hover {
-            color: #0066cc;
-        }
-        
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1431274172761-fca41d930114?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
-        
-        .breadcrumb {
-            padding: 15px 0;
-            font-size: 14px;
-        }
-        
-        .breadcrumb a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        
-        .section-title {
-            font-size: 28px;
-            margin: 30px 0 20px;
-            color: #333;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background-color: #0066cc;
-        }
-        
-        .packages-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 30px 0;
-            background-color: white;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        .packages-table th {
-            background-color: #0066cc;
-            color: white;
-            text-align: left;
-            padding: 15px;
-            font-weight: 500;
-        }
-        
-        .packages-table td {
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-            vertical-align: middle;
-        }
-        
-        .packages-table tr:last-child td {
-            border-bottom: none;
-        }
-        
-        .packages-table tr:hover {
-            background-color: #f9f9f9;
-        }
-        
-        .country-flag {
-            width: 30px;
-            height: 20px;
-            object-fit: cover;
-            border-radius: 2px;
-            margin-right: 10px;
-            vertical-align: middle;
-        }
-        
-        .package-name {
-            font-weight: 500;
-            color: #0066cc;
-        }
-        
-        .package-duration {
-            color: #666;
-            font-size: 14px;
-        }
-        
-        .package-price {
-            font-weight: bold;
-            color: #0066cc;
-        }
-        
-        .package-price span {
-            font-size: 12px;
-            color: #666;
-            font-weight: normal;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 8px 15px;
-            background-color: #0066cc;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 500;
-            font-size: 14px;
-            transition: background-color 0.3s ease;
-        }
-        
-        .btn:hover {
-            background-color: #0055aa;
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 1px solid #0066cc;
-            color: #0066cc;
-        }
-        
-        .btn-outline:hover {
-            background-color: #0066cc;
-            color: white;
-        }
-        
-        .rating {
-            color: #ffc107;
-            font-size: 14px;
-        }
-        
-        footer {
-            background-color: #222;
-            color: #fff;
-            padding: 40px 0;
-            margin-top: 50px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-        
-        .footer-column h3 {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-column ul li a {
-            color: #bbb;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-column ul li a:hover {
-            color: #fff;
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            margin-top: 30px;
-            border-top: 1px solid #444;
-            color: #bbb;
-            font-size: 14px;
-        }
-        
-        footer {
-        background-color: #4B0082;
-        color: white;
-        text-align: center;
-        padding: 20px;
-        margin-top: 50px;
-        }
-        </style>
-    </head>
-    <body >
-        <header>
-            <nav>
-                <div class="logo">
-                    <img src="TravepediaWW.png" alt="Travepedia Logo">
-                    <span class="logotext"><a href="index.html"> Travepedia </a></span>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiday Packages</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-white bg-white p-3">
+            <div class="container-fluid">
+                <div class="align-items-center">
+                    <img src="TravepediaWW.png" alt="Logo" width="70" class="me-2">
+                    <a href="index.html" class="navbar-brand fs-3 fw-bold text-dark">Travepedia</a>
                 </div>
+<<<<<<< HEAD
                 <ul class="nav-links">
                     <li><a href="AboutUs.html">About Us</a></li>
                     <li><a href="Services.html">Services page </a></li>
@@ -272,156 +24,279 @@
                     <li><a href="discover oman.html">Experience Oman</a></li>
                     <li><a href="Feedback.html">Feedback</a></li>
                     <li><a href="contact us.html" class="contact-btn">Get In Touch</a></li>
+=======
+                <ul class="navbar-nav flex-row gap-5">
+                    <li class="nav-item"><a href="AboutUs.html" class="nav-link fw-bold">About Us</a></li>
+                    <li class="nav-item"><a href="Services.html" class="nav-link fw-bold">Services</a></li>
+                    <li class="nav-item"><a href="HolidayPackages.html" class="nav-link fw-bold text-primary">Holiday Packages</a></li>
+                    <li class="nav-item"><a href="luxury.html" class="nav-link fw-bold">Luxury Concierge</a></li>
+                    <li class="nav-item"><a href="ExperienceOman.html" class="nav-link fw-bold">Experience Oman</a></li>
+                    <li class="nav-item"><a href="Feedback.html" class="nav-link fw-bold">Feedback</a></li>
+                    <li class="nav-item"><a href="contactUs.html" class="btn btn-primary fw-bold">Contact Us</a></li>
+>>>>>>> 3482939ef3c442b4801a07bece9d018b882da0a2
                 </ul>
-            </nav>
-        </header>
-        <section class="hero">
-            <div class="container">
-                <h1>World Holiday Packages</h1>
-                <p>Discover amazing destinations across the globe</p>
             </div>
-        </section>
+        </nav>
+    </header>
+    <div class=" vh-100 d-flex align-items-center justify-content-center text-white" style="background:url('https://images.unsplash.com/photo-1431274172761-fca41d930114?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;">
+        <div class="text-center">
+            <h1 class="display-3 fw-bold mb-3">World Holiday Packages</h1>
+            <p class="lead fs-3">Discover amazing destinations across the globe</p>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="card shadow-sm border-0">
+          <div class="card-body p-4">
+            <h3 class="text-dark mb-4">Trip Budget Estimator</h3>
+            
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Travelers</label>
+                <input type="number" class="form-control" min="1" value="1" id="travelers">
+              </div>
+              
+              <div class="col-md-6">
+                <label class="form-label">Nights</label>
+                <input type="number" class="form-control" min="1" value="1" id="nights">
+              </div>
+              
+              <div class="col-12">
+                <label class="form-label">Accommodation Level</label>
+                <form action="https://httpbin.org/get" method="get">
+                <select class="form-select" id="accommodation">
+                  <option value="299.83">Italy ($299+/night)</option>
+                  <option value="277.66" >Japan ($277+/night)</option>
+                  <option value="314.14">South Africa ($314+/night)</option>
+                  <option value="362.37">Canada ($362+/night)</option>
+                  <option value="399.8">Brazil ($399+/night)</option>
+                  <option value="145.36" selected>Thailand ($145+/night)</option>
+                  <option value="328.42">France ($328+/night)</option>
+                  <option value="269.15">New Zealand ($269+/night)</option>
+                </select>
+                </form>
+              </div>
+              
+              <div class="col-12 mt-4">
+                <button class="btn btn-primary w-100" onclick="calculateBudget()">
+                  Calculate Estimate
+                </button>
+              </div>
+              
+              <div class="col-12 text-center mt-3" id="result" style="display:none;">
+                <h4 class="text-success">Estimated Cost: <span id="totalCost">$0</span></h4>
+            </div>
+         </div>
+        </div>
+    </div>
+      </div>
+      
+      <script>
+        function calculateBudget() {
+          const travelers = document.getElementById('travelers').value;
+          const nights = document.getElementById('nights').value;
+          const accommodation = document.getElementById('accommodation').value;
+          const total = travelers * nights * accommodation;
+          
+          document.getElementById('totalCost').textContent = '$' + total.toLocaleString();
+          document.getElementById('result').style.display = 'block';
+        }
+      </script>
+
+    <div class="container my-5">
+    
+        <h2 class="text-dark fw-bold mb-4 pb-2 border-bottom border-primary">Featured Holiday Packages</h2>
         
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="index.html">Home</a> &gt; <a href="#">Holiday Packages</a> &gt; <a href="#">Worldwide</a>
-            </div>
-            
-            <h2 class="section-title">Featured Holiday Packages</h2>
-            
-            <table class="packages-table">
-                <thead>
+        <div class="table-responsive rounded-4 border mb-5">
+            <table class="table table-hover  mb-0">
+                
+                <thead class=" text-white">
                     <tr>
-                        <th>Destination</th>
-                        <th>Package</th>
-                        <th>Duration</th>
-                        <th>Price</th>
-                        <th>Rating</th>
-                        <th>Action</th>
+                        <th class="p-3 text-center">Destination</th>
+                        <th class="p-3 text-center">Package</th>
+                        <th class="p-3 text-center">Duration</th>
+                        <th class="p-3 text-center">Price</th>
+                        <th class="p-3 text-center">Rating</th>
+                        <th class="p-3 text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                    
                     <tr>
-                        <td>
-                            <img src="it.png" class="country-flag" alt="Italy">
+                        <td class="align-middle ">
+                            <img src="it.png" class="rounded me-2 " width="30" height="20" alt="Italy">
                             Italy
                         </td>
-                        <td>
-                            <span class="package-name">Romantic Venice & Florence</span>
-                            <div class="package-duration">Includes gondola ride and wine tasting</div>
+                        <td class="text-center">
+                            <div class="fw-bold text-primary">Romantic Venice & Florence</div>
+                            <small class="text-muted">Includes gondola ride and wine tasting</small>
                         </td>
-                        <td>7 Days / 6 Nights</td>
-                        <td class="package-price">$1,799 <span>per person</span></td>
-                        <td class="rating">★★★★☆</td>
-                        <td><a href="#" class="btn">Book Now</a></td>
+                        <td class="p-4 align-middle text-center">
+                            <span class="badge bg-info text-dark">7 Days / 6 Nights</span>
+                        </td>
+                        <td class="align-middle text-center">
+                            <span class="fw-bold text-success ">$1,799</span>
+                            <small class="text-muted d-block">per person</small>
+                        </td>
+                        <td class="align-middle text-warning text-center">★★★★☆</td>
+                        <td class="align-middle text-center"><a href="#" class="btn btn-sm btn-primary">Book Now</a></td>
                     </tr>
+                    
+                    
                     <tr>
-                        <td>
-                            <img src="jp.png" class="country-flag" alt="Japan">
+                        <td class="align-middle ">
+                            <img src="jp.png" class="rounded me-2" width="30" height="20" alt="Japan">
                             Japan
                         </td>
-                        <td>
-                            <span class="package-name">Tokyo & Kyoto Explorer</span>
-                            <div class="package-duration">Bullet train experience included</div>
+                        <td class="text-center">
+                            <div class="fw-bold text-primary">Tokyo & Kyoto Explorer</div>
+                            <small class="text-muted">Bullet train experience included</small>
                         </td>
-                        <td>10 Days / 9 Nights</td>
-                        <td class="package-price">$2,499 <span>per person</span></td>
-                        <td class="rating">★★★★★</td>
-                        <td><a href="#" class="btn">Book Now</a></td>
+                        <td class="p-4 align-middle text-center">
+                            <span class="badge bg-info text-dark">10 Days / 9 Nights</span>
+                        </td>
+                        <td class="align-middle text-center">
+                            <span class="fw-bold text-success">$2,499</span>
+                            <small class="text-muted d-block">per person</small>
+                        </td>
+                        <td class="align-middle text-warning text-center">★★★★★</td>
+                        <td class="align-middle text-center"><a href="#" class="btn btn-sm btn-primary">Book Now</a></td>
                     </tr>
+                    
+                    
                     <tr>
-                        <td>
-                            <img src="za.png" class="country-flag" alt="South Africa">
+                        <td class="align-middle ">
+                            <img src="za.png" class="rounded me-2" width="30" height="20" alt="South Africa">
                             South Africa
                         </td>
-                        <td>
-                            <span class="package-name">Safari Adventure</span>
-                            <div class="package-duration">Kruger National Park safari</div>
+                        <td class="text-center">
+                            <div class="fw-bold text-primary">Safari Adventure</div>
+                            <small class="text-muted">Kruger National Park safari</small>
                         </td>
-                        <td>8 Days / 7 Nights</td>
-                        <td class="package-price">$2,199 <span>per person</span></td>
-                        <td class="rating">★★★★☆</td>
-                        <td><a href="#" class="btn">Book Now</a></td>
+                        <td class="p-4 align-middle text-center">
+                            <span class="badge bg-info text-dark">8 Days / 7 Nights</span>
+                        </td>
+                        <td class="align-middle text-center">
+                            <span class="fw-bold text-success">$2,199</span>
+                            <small class="text-muted d-block">per person</small>
+                        </td>
+                        <td class="align-middle text-warning text-center">★★★★☆</td>
+                        <td class="align-middle text-center"><a href="#" class="btn btn-sm btn-primary">Book Now</a></td>
                     </tr>
+                    
+                    
                     <tr>
-                        <td>
-                            <img src="ca.png" class="country-flag" alt="Canada">
+                        <td class="align-middle ">
+                            <img src="ca.png" class="rounded me-2" width="30" height="20" alt="Canada">
                             Canada
                         </td>
-                        <td>
-                            <span class="package-name">Rocky Mountains Tour</span>
-                            <div class="package-duration">Banff and Jasper National Parks</div>
+                        <td class="text-center">
+                            <div class="fw-bold text-primary">Rocky Mountains Tour</div>
+                            <small class="text-muted">Banff and Jasper National Parks</small>
                         </td>
-                        <td>9 Days / 8 Nights</td>
-                        <td class="package-price">$2,899 <span>per person</span></td>
-                        <td class="rating">★★★★★</td>
-                        <td><a href="#" class="btn">Book Now</a></td>
+                        <td class="p-4 align-middle text-center">
+                            <span class="badge bg-info text-dark">9 Days / 8 Nights</span>
+                        </td>
+                        <td class="align-middle text-center">
+                            <span class="fw-bold text-success">$2,899</span>
+                            <small class="text-muted d-block">per person</small>
+                        </td>
+                        <td class="align-middle text-warning text-center">★★★★★</td>
+                        <td class="align-middle text-center"><a href="#" class="btn btn-sm btn-primary">Book Now</a></td>
                     </tr>
+                    
                     <tr>
-                        <td>
-                            <img src="br.png" class="country-flag" alt="Brazil">
+                        <td class="align-middle ">
+                            <img src="br.png" class="rounded me-2" width="30" height="20" alt="Brazil">
                             Brazil
                         </td>
-                        <td>
-                            <span class="package-name">Rio Carnival Experience</span>
-                            <div class="package-duration">VIP tickets to Sambadrome</div>
+                        <td class="text-center">
+                            <div class="fw-bold text-primary">Rio Carnival Experience</div>
+                            <small class="text-muted">VIP tickets to Sambadrome</small>
                         </td>
-                        <td>6 Days / 5 Nights</td>
-                        <td class="package-price">$1,999 <span>per person</span></td>
-                        <td class="rating">★★★★☆</td>
-                        <td><a href="#" class="btn">Book Now</a></td>
+                        <td class="p-4 align-middle text-center">
+                            <span class="badge bg-info text-dark">6 Days / 5 Nights</span>
+                        </td>
+                        <td class="align-middle text-center">
+                            <span class="fw-bold text-success">$1,999</span>
+                            <small class="text-muted d-block">per person</small>
+                        </td>
+                        <td class="align-middle text-warning text-center">★★★★☆</td>
+                        <td class="align-middle text-center"><a href="#" class="btn btn-sm btn-primary">Book Now</a></td>
                     </tr>
+                    
+                    
                     <tr>
-                        <td>
-                            <img src="th.png" class="country-flag" alt="Thailand">
+                        <td class="align-middle ">
+                            <img src="th.png" class="rounded me-2" width="30" height="20" alt="Thailand">
                             Thailand
                         </td>
-                        <td>
-                            <span class="package-name">Island Hopping</span>
-                            <div class="package-duration">Phuket, Phi Phi, and Krabi</div>
+                        <td class="text-center">
+                            <div class="fw-bold text-primary">Island Hopping</div>
+                            <small class="text-muted">Phuket, Phi Phi, and Krabi</small>
                         </td>
-                        <td>12 Days / 11 Nights</td>
-                        <td class="package-price">$1,599 <span>per person</span></td>
-                        <td class="rating">★★★★★</td>
-                        <td><a href="#" class="btn">Book Now</a></td>
+                        <td class="p-4 align-middle text-center">
+                            <span class="badge bg-info text-dark">12 Days / 11 Nights</span>
+                        </td>
+                        <td class="align-middle text-center">
+                            <span class="fw-bold text-success">$1,599</span>
+                            <small class="text-muted d-block">per person</small>
+                        </td>
+                        <td class="align-middle text-warning text-center">★★★★★</td>
+                        <td class="align-middle text-center"><a href="#" class="btn btn-sm btn-primary">Book Now</a></td>
                     </tr>
+                    
+                    
                     <tr>
-                        <td>
-                            <img src="fr.png" class="country-flag" alt="France">
+                        <td class="align-middle ">
+                            <img src="fr.png" class="rounded me-2" width="30" height="20" alt="France">
                             France
                         </td>
-                        <td>
-                            <span class="package-name">Paris & Provence</span>
-                            <div class="package-duration">Eiffel Tower and lavender fields</div>
+                        <td class="text-center">
+                            <div class="fw-bold text-primary">Paris & Provence</div>
+                            <small class="text-muted">Eiffel Tower and lavender fields</small>
                         </td>
-                        <td>8 Days / 7 Nights</td>
-                        <td class="package-price">$2,299 <span>per person</span></td>
-                        <td class="rating">★★★★☆</td>
-                        <td><a href="#" class="btn">Book Now</a></td>
+                        <td class="p-4 align-middle text-center">
+                            <span class="badge bg-info text-dark">8 Days / 7 Nights</span>
+                        </td>
+                        <td class="align-middle text-center">
+                            <span class="fw-bold text-success">$2,299</span>
+                            <small class="text-muted d-block">per person</small>
+                        </td>
+                        <td class="align-middle text-warning text-center">★★★★☆</td>
+                        <td class="align-middle text-center"><a href="#" class="btn btn-sm btn-primary">Book Now</a></td>
                     </tr>
+                    
                     <tr>
-                        <td>
-                            <img src="nz.png" class="country-flag" alt="New Zealand">
+                        <td class="align-middle">
+                            <img src="nz.png" class="rounded me-2" width="30" height="20" alt="New Zealand">
                             New Zealand
                         </td>
-                        <td>
-                            <span class="package-name">Lord of the Rings Tour</span>
-                            <div class="package-duration">North and South Island adventure</div>
+                        <td class="text-center">
+                            <div class="fw-bold text-primary">Lord of the Rings Tour</div>
+                            <small class="text-muted">North and South Island adventure</small>
                         </td>
-                        <td>14 Days / 13 Nights</td>
-                        <td class="package-price">$3,499 <span>per person</span></td>
-                        <td class="rating">★★★★★</td>
-                        <td><a href="#" class="btn">Book Now</a></td>
+                        <td class="p-4 align-middle text-center">
+                            <span class="badge bg-info text-dark">14 Days / 13 Nights</span>
+                        </td>
+                        <td class="align-middle text-center">
+                            <span class="fw-bold text-success">$3,499</span>
+                            <small class="text-muted d-block">per person</small>
+                        </td>
+                        <td class="align-middle text-warning text-center">★★★★★</td>
+                        <td class="align-middle text-center"><a href="#" class="btn btn-sm btn-primary">Book Now</a></td>
                     </tr>
-                </tbody>
-            </table>
-            
-            <div style="text-align: center; margin: 30px 0;">
-                <a href="#" class="btn btn-outline">View All Packages</a>
-            </div>
+        </tbody>
+        </table>
         </div>
-        <footer>
-            <p>&copy; 2025 Travepedia. All rights reserved.</p>
-        </footer>
-    </body>
+
+        <div class="text-center my-4">
+            <a href="#" class="btn btn-outline-primary px-4">View All Packages</a>
+        </div>
+        </div>
+
+    <footer class="bg-primary text-white py-4 text-center">
+        <p class="mb-0">&copy; 2025 Travepedia. All rights reserved.</p>
+    </footer>
+</body>
 </html>
