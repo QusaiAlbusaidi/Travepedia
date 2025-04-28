@@ -29,9 +29,12 @@
 
         <script type="text/javascript">
             var myGamePiece;
-            
+            var myObstacle;
+
+
             function startGame() {
                 myGameArea.start();
+                myObstacle = new component(10, 200, "green", 300, 120);
                 myGamePiece = new component(30, 30, "red", 10, 120);
             }
             
@@ -39,7 +42,7 @@
                 canvas : document.createElement("canvas"),
                 start : function() {
                 this.canvas.width = 1000;
-                this.canvas.height = 400;
+                this.canvas.height = 500;
                 this.context = this.canvas.getContext("2d");
                 document.body.insertBefore(this.canvas, document.body.childNodes[2]);
                 this.interval = setInterval(updateGameArea, 20);
@@ -62,13 +65,17 @@
                 }
                 this.newPos = function(){
                     this.x += this.speedX;
-                    this.Y += this.speedY;
+                    this.y += this.speedY;
                 }
+            this.crashWith = function(otherobj){
+                
+            }
             }
 
             function updateGameArea() {
                 myGameArea.clear();
                 myGamePiece.newPos();
+                myObstacle.update();
                 myGamePiece.update();
             }
             function moveup(){
@@ -88,14 +95,21 @@
                 myGamePiece.speedY = 0;
             }
         </script>
+        <div class="container my-5">
+            <div class="row" style="height: 20%;"></div>
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col">
+                    <input type="button" class="btn btn-dark" value="Start Game" onclick="startGame()"/>
+                    <input type="button" class="btn btn-dark" value="UP" onmousedown="moveup()" onmouseup="stopmove()"/>
+                    <input type="button" class="btn btn-dark" value="DOWN" onmousedown="movedown()" onmouseup="stopmove()"/>
+                    <input type="button" class="btn btn-dark" value="LEFT" onmousedown="moveleft()" onmouseup="stopmove()"/>
+                    <input type="button" class="btn btn-dark" value="RIGHT" onmousedown="moveright()" onmouseup="stopmove()"/>
+                </div>
+            </div>
+        </div>
 
-        <input type="button" value="Start Game" onclick="startGame()"/>
-        <input type="button" value="UP" onmousedown="moveup()" onmouseup="stopmove()"/>
-        <input type="button" value="DOWN" onmousedown="movedown()" onmouseup="stopmove()"/>
-        <input type="button" value="LEFT" onmousedown="moveleft()" onmouseup="stopmove()"/>
-        <input type="button" value="RIGHT" onmousedown="moveright()" onmouseup="stopmove()"/>
-        
-        <footer class="bg-primary text-white py-4 text-center">
+        <footer class="fixed-bottom bg-primary text-white py-4 text-center">
             <p class="mb-0">&copy; 2025 Travepedia. All rights reserved.</p>
         </footer>
     </body>
