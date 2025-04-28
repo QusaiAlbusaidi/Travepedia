@@ -57,48 +57,8 @@
                     </div>
                 </div>
             </div>
-<<<<<<< Updated upstream
         </div>
-        <p1 id="P"></p1>
-        <script type="text/javascript">
-            
-            function Validation(){
-                if(document.Form1.FullName.value.search(/\w{5,15}|\w{5,15}/)==-1){
-                    alert("Invalid Name!");
-                    document.Form1.FullName.focus();  
-                    return false; 
-                }
-                
-                if(document.Form1.Email.value.indexOf("@",0)<0){
-                    alert("Invalid Email Address!");
-                    document.Form1.Email.focus();
-                    return false;
-                }
-                
-                if(document.Form1.Email.value.indexOf(".",0)<0){
-                    alert("Invalid Email Address!");
-                    document.Form1.Email.focus(); 
-                    return false;
-                }
-                if(document.Form1.PhoneNumber.value.search(/\d{8}/)==-1){
-                    alert("Invalid Phone Number!");
-                    document.Form1.PhoneNumber.focus(); 
-                    return false;
-                }
-                if(document.Form1.Message.value.search(/\w{1,500}/)==-1){
-                    alert("Message Box Must Not Be Empty!");
-                    document.Form1.Message.focus();
-                    return false;
-                }
-                if(document.Form1.Gender.value==""){
-                    alert("Must Select Gender!");
-                    document.Form1.Gender.focus(); 
-                    return false;
-                }
-                return true;
-            }
-        </script>
-=======
+        
             <p1 id="P"></p1>
             <script type="text/javascript">
                 // Main validation function that checks all form fields
@@ -147,7 +107,6 @@
                     return true;
                 }
             </script>
->>>>>>> Stashed changes
         
         <footer class="bg-primary text-white py-5 text-center">
             <p class="mb-0">&copy; 2025 Travepedia. All rights reserved.</p>
