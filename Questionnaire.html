@@ -52,49 +52,40 @@
         </div>
         <p1 id="P"></p1>
         <script type="text/javascript">
-            // Main validation function that checks all form fields
+            
             function Validation(){
-                // Check FullName field: must contain 5-15 word characters (letters, numbers, underscores)
-                // The regex \w{5,15} checks for 5-15 word characters
-                // search() returns -1 if the pattern isn't found
                 if(document.Form1.FullName.value.search(/\w{5,15}|\w{5,15}/)==-1){
                     alert("Invalid Name!");
-                    document.Form1.FullName.focus(); // Set focus to the FullName field 
-                    return false; //prevent form submission
+                    document.Form1.FullName.focus();  
+                    return false; 
                 }
-                // Check Email field: must contain an @ symbol
-                // indexOf() returns -1 if the character isn't found
+                
                 if(document.Form1.Email.value.indexOf("@",0)<0){
                     alert("Invalid Email Address!");
                     document.Form1.Email.focus();
                     return false;
                 }
-                // Check Email field: must contain a dot (.)
+                
                 if(document.Form1.Email.value.indexOf(".",0)<0){
                     alert("Invalid Email Address!");
                     document.Form1.Email.focus(); 
                     return false;
                 }
-                // Check PhoneNumber field: must contain exactly 8 digits
-                // The regex \d{8} checks for exactly 8 digits
                 if(document.Form1.PhoneNumber.value.search(/\d{8}/)==-1){
                     alert("Invalid Phone Number!");
                     document.Form1.PhoneNumber.focus(); 
                     return false;
                 }
-                // The regex \d{1,500} checks for presence of a message
                 if(document.Form1.Message.value.search(/\w{1,500}/)==-1){
                     alert("Message Box Must Not Be Empty!");
                     document.Form1.Message.focus();
                     return false;
                 }
-                // Check Gender field: must be selected (value not empty)
                 if(document.Form1.Gender.value==""){
                     alert("Must Select Gender!");
                     document.Form1.Gender.focus(); 
                     return false;
                 }
-                // If all validations pass, the form will submit
                 return true;
             }
         </script>
