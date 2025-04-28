@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <title>Questionnaire Page</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+       
+    </head>
+        <header>
+            <nav class="navbar navbar-white bg-white p-3">
+                <div class="container-fluid">
+                    <div class="align-items-center">
+                        <img src="TravepediaWW.png" alt="Logo" width="70" class="me-2">
+                        <a href="index.html" class="navbar-brand fs-3 fw-bold text-dark">Travepedia</a>
+                    </div>
+                    <ul class="navbar-nav flex-row gap-5">
+                        <li class="nav-item"><a href="AboutUs.html" class="nav-link fw-bold text-dark">About Us</a></li>
+                        <li class="nav-item"><a href="Services.html" class="nav-link fw-bold">Services</a></li>
+                        <li class="nav-item"><a href="HolidayPackages.html" class="nav-link fw-bold">Packages</a></li>
+                        <li class="nav-item"><a href="luxury.html" class="nav-link fw-bold">Luxury</a></li>
+                        <li class="nav-item"><a href="discover oman.html" class="nav-link fw-bold">Oman</a></li>
+                        <li class="nav-item"><a href="Feedback.html" class="nav-link fw-bold">Feedback</a></li>
+                        <li class="nav-item"><a href="contact us.html" class="btn btn-primary fw-bold">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <body style="background:url(bahla.jpeg)center/cover no-repeat;">
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="rounded-3 shadow-sm border-0">
+                        <div class=" p-4 p-md-5 mb-4 ">
+                            <form name="Form1" action="mailto:travepediaworld@gmail.com" onsubmit="return Validation()">
+                                <label>Full Name</label></br>
+                                <input type="text" name="FullName"/></br>
+                                <label>Email Address</label></br>
+                                <input type="text" name="Email"/></br>
+                                <label>Phone Number</label></br>
+                                <input type="text" name="PhoneNumber"/>
+                                </br>
+                                <label>Message</label></br>
+                                <textarea name="Message"></textarea></br>
+                                <label>Gender</label></br>
+                                <input type="radio" value="M" name="Gender"/>Male
+                                <input type="radio" value="F" name="Gender"/>Female
+                                </br></br>
+                                <input type="submit" name="Submit" class="btn btn-primary w-100 fw-bold py-2"/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p1 id="P"></p1>
+        <script type="text/javascript">
+            // Main validation function that checks all form fields
+            function Validation(){
+                // Check FullName field: must contain 5-15 word characters (letters, numbers, underscores)
+                // The regex \w{5,15} checks for 5-15 word characters
+                // search() returns -1 if the pattern isn't found
+                if(document.Form1.FullName.value.search(/\w{5,15}|\w{5,15}/)==-1){
+                    alert("Invalid Name!");
+                    document.Form1.FullName.focus(); // Set focus to the FullName field 
+                    return false; //prevent form submission
+                }
+                // Check Email field: must contain an @ symbol
+                // indexOf() returns -1 if the character isn't found
+                if(document.Form1.Email.value.indexOf("@",0)<0){
+                    alert("Invalid Email Address!");
+                    document.Form1.Email.focus();
+                    return false;
+                }
+                // Check Email field: must contain a dot (.)
+                if(document.Form1.Email.value.indexOf(".",0)<0){
+                    alert("Invalid Email Address!");
+                    document.Form1.Email.focus(); 
+                    return false;
+                }
+                // Check PhoneNumber field: must contain exactly 8 digits
+                // The regex \d{8} checks for exactly 8 digits
+                if(document.Form1.PhoneNumber.value.search(/\d{8}/)==-1){
+                    alert("Invalid Phone Number!");
+                    document.Form1.PhoneNumber.focus(); 
+                    return false;
+                }
+                // The regex \d{1,500} checks for presence of a message
+                if(document.Form1.Message.value.search(/\w{1,500}/)==-1){
+                    alert("Message Box Must Not Be Empty!");
+                    document.Form1.Message.focus();
+                    return false;
+                }
+                // Check Gender field: must be selected (value not empty)
+                if(document.Form1.Gender.value==""){
+                    alert("Must Select Gender!");
+                    document.Form1.Gender.focus(); 
+                    return false;
+                }
+                // If all validations pass, the form will submit
+                return true;
+            }
+        </script>
+        
+        
+        <footer class="bg-primary text-white py-4 text-center">
+            <p class="mb-0">&copy; 2025 Travepedia. All rights reserved.</p>
+        </footer>
+    </body>
+</html>
