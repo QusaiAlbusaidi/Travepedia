@@ -45,12 +45,19 @@
                 this.canvas.height = 500;
                 this.context = this.canvas.getContext("2d");
                 document.body.insertBefore(this.canvas, document.body.childNodes[2]);
+                this.frameNo = 0;
                 this.interval = setInterval(updateGameArea, 20);
             },
             clear : function(){
                 this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
                 }
             }
+
+            function everyinterval(n) {
+                if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
+                return false;
+            }
+
             function component(width, height, color, x, y) {
                 this.width = width;
                 this.height = height;
@@ -92,9 +99,9 @@
                     myGameArea.stop();
                 } else {
                     myGameArea.clear();
-                    myGamePiece.newPos();
                     myObstacle.x += -1;
                     myObstacle.update();
+                    myGamePiece.newPos();
                     myGamePiece.update();
                 }
             }
@@ -111,7 +118,7 @@
             function moveright(){
                 myGamePiece.speedX += 1;
             }
-            function stopmove(){
+            function stopMove(){
                 myGamePiece.speedX = 0;
                 myGamePiece.speedY = 0;
             }
@@ -122,10 +129,10 @@
                 <div class="col-4"></div>
                 <div class="col">
                     <input type="button" class="btn btn-dark" value="Start Game" onclick="startGame()"/>
-                    <input type="button" class="btn btn-dark" value="UP" onmousedown="moveup()" onmouseup="stopmove()"/>
-                    <input type="button" class="btn btn-dark" value="DOWN" onmousedown="movedown()" onmouseup="stopmove()"/>
-                    <input type="button" class="btn btn-dark" value="LEFT" onmousedown="moveleft()" onmouseup="stopmove()"/>
-                    <input type="button" class="btn btn-dark" value="RIGHT" onmousedown="moveright()" onmouseup="stopmove()"/>
+                    <input type="button" class="btn btn-dark" value="UP" onmousedown="moveup()" onmouseup="stopMove()"/>
+                    <input type="button" class="btn btn-dark" value="DOWN" onmousedown="movedown()" onmouseup="stopMove()"/>
+                    <input type="button" class="btn btn-dark" value="LEFT" onmousedown="moveleft()" onmouseup="stopMove()"/>
+                    <input type="button" class="btn btn-dark" value="RIGHT" onmousedown="moveright()" onmouseup="stopMove()"/>
                 </div>
             </div>
         </div>
