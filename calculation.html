@@ -64,24 +64,32 @@
 
 <script>
     function calculateCost() {
+        // Get values from the input fields and convert them to integers
         const nights = parseInt(document.getElementById('nights').value);
         const trekkingTours = parseInt(document.getElementById('trekkingTours').value);
         const dhowCruises = parseInt(document.getElementById('dhowCruises').value);
         const age = parseInt(document.getElementById('age').value);
 
+        // Prices for each travel activity
         const desertCampingPrice = 150;
         const trekkingTourPrice = 200;
         const dhowCruisePrice = 75;
 
-        let total = (nights * desertCampingPrice) + (trekkingTours * trekkingTourPrice) + (dhowCruises * dhowCruisePrice);
+        // Calculate total cost without discount
+        let total = (nights * desertCampingPrice) + 
+                    (trekkingTours * trekkingTourPrice) + 
+                    (dhowCruises * dhowCruisePrice);
 
+        // Apply 10% discount for seniors (age > 60)
         if (age > 60) {
             total = total - (total * 0.10);
         }
 
+        // Display the total cost with two decimal points
         document.getElementById('result').innerHTML = `Your estimated travel cost is: $${total.toFixed(2)}`;
     }
 </script>
+
 <footer class="bg-primary text-white py-4 text-center">
     <p class="mb-0">&copy; 2025 Travepedia. All rights reserved.</p>
 </footer>
