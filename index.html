@@ -115,16 +115,21 @@
 
 
 <script>
+    // This function updates the marquee message with the current date and time
     function updateMarquee() {
-        const now = new Date();
-        const date = now.toLocaleDateString();
-        const time = now.toLocaleTimeString();
+        const now = new Date(); // Get current date and time
+        const date = now.toLocaleDateString(); // Format date (e.g., 4/29/2025)
+        const time = now.toLocaleTimeString(); // Format time (e.g., 10:45:12 AM)
+        
+        // Compose the welcome message
         const text = `Welcome to the Travepedia website! Today is ${date}, and the time is ${time}`;
+        
+        // Update the content of the marquee element
         document.getElementById("marqueeText").textContent = text;
     }
 
-    updateMarquee();
-    setInterval(updateMarquee, 1000); 
+    updateMarquee(); // Initial call to display the message immediately
+    setInterval(updateMarquee, 1000); // Update the message every second
 </script>
 
 </body>
