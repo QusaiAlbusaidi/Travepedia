@@ -1,250 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <title>Experience Oman</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Add extra styling if you want */
-        .title-section {
-            background: url('BG12.jpg') center/cover no-repeat;
-            min-height: 400px;
-            margin-top: 80px;
-        }
-        .form-section input, .form-section button {
-            margin: 5px;
-            padding: 8px;
-        }
-    </style>
 </head>
 <body>
-<header>
-    <nav class="navbar navbar-white bg-white p-3">
-        <div class="container-fluid">
-            <div class="align-items-center d-flex">
-                <img src="TravepediaWW.png" alt="Logo" width="70" class="me-2">
-                <a href="index.html" class="navbar-brand fs-3 fw-bold text-dark">Travepedia</a>
-            </div>
-            <ul class="navbar-nav flex-row gap-5">
-                <li class="nav-item"><a href="AboutUs.html" class="nav-link fw-bold">About Us</a></li>
-                <li class="nav-item"><a href="Services.html" class="nav-link fw-bold">Services</a></li>
-                <li class="nav-item"><a href="HolidayPackages.html" class="nav-link fw-bold">Holiday Packages</a></li>
-                <li class="nav-item"><a href="luxury.html" class="nav-link fw-bold">Luxury Concierge</a></li>
-                <li class="nav-item"><a href="ExperienceOman.html" class="nav-link fw-bold text-primary">Experience Oman</a></li>
-                <li class="nav-item"><a href="Feedback.html" class="nav-link fw-bold">Feedback</a></li>
-                <li class="nav-item"><a href="contactUs.html" class="btn btn-primary fw-bold">Contact Us</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
-
-<!-- Hero Section -->
-<div class="vh-100 d-flex align-items-center justify-content-center text-white title-section">
-    <div class="text-center">
-        <h1 class="display-3 fw-bold mb-3">Experience Oman</h1>
-        <p class="lead fs-3">Discover the breathtaking landscapes, rich culture, and unique adventures that Oman has to offer</p>
-    </div>
-</div>
-
-<!-- Experience Cards -->
-<div class="container my-5">
-    <div class="row g-4">
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm border-0">
-                <div class="card-img-top" style="height: 250px; background: url('03d7cc02-a7f4-4986-9314-7683df2aff2f.jpeg') center/cover no-repeat;"></div>
-                <div class="card-body">
-                    <h2 class="card-title text-primary">Nature & Adventure</h2>
-                    <p class="card-text text-muted">Oman is the land of adventures, from exploring the Hoota Cave to zip-lining in Musandam Governorate. Experience the stunning natural beauty of Oman's mountains, wadis, and coastline.</p>
+    <header>
+        <nav class="navbar navbar-white bg-white p-3">
+            <div class="container-fluid">
+                <div class="align-items-center">
+                    <img src="TravepediaWW.png" alt="Logo" width="70" class="me-2">
+                    <a href="index.html" class="navbar-brand fs-3 fw-bold text-dark">Travepedia</a>
                 </div>
+                <ul class="navbar-nav flex-row gap-5">
+                    <li class="nav-item"><a href="AboutUs.html" class="nav-link fw-bold">About Us</a></li>
+                    <li class="nav-item"><a href="Services.html" class="nav-link fw-bold">Services</a></li>
+                    <li class="nav-item"><a href="HolidayPackages.html" class="nav-link fw-bold">Holiday Packages</a></li>
+                    <li class="nav-item"><a href="luxury.html" class="nav-link fw-bold ">Luxury Concierge</a></li>
+                   
+                    <li class="nav-item"><a href="Feedback.html" class="nav-link fw-bold">Feedback</a></li>
+                    <li class="nav-item"><a href="contact us.html" class="btn btn-primary fw-bold">Contact Us</a></li>
+                    
+                </ul>
             </div>
-        </div>
+        </nav>
+    </header>
 
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm border-0">
-                <div class="card-img-top" style="height: 250px; background: url('bahla.jpeg') center/cover no-repeat;"></div>
-                <div class="card-body">
-                    <h2 class="card-title text-primary">Culture & Heritage</h2>
-                    <p class="card-text text-muted">The Sultanate of Oman is globally renowned for its unique culture and rich heritage. Visit ancient forts, traditional souqs, and UNESCO World Heritage sites that tell the story of Oman's history.</p>
-                </div>
+    <div class="vh-100 d-flex align-items-center justify-content-center text-white" style=" background:  url('BG12.jpg') center/cover no-repeat; min-height: 400px; margin-top: 80px;">
+        <div class=" text-center">
+            <h1 class="display-3 fw-bold mb-3">Experience Oman</h1>
+            <p class="lead fs-3">Discover the breathtaking landscapes, rich culture, and unique adventures that Oman has to offer</p>
+        </div>
+    </div>
+
+    <div class="container my-5 pb-5">
+     
+        <h3 class="text-center mb-4">Add New Tour Package</h3>
+        <form id="addTourPackageForm" class="mb-4">
+            <div class="mb-3">
+                <label for="category" class="form-label">Category</label>
+                <input type="text" class="form-control" id="category" required>
             </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm border-0">
-                <div class="card-img-top" style="height: 250px; background: url('Oman-Desert-Camping.webp') center/cover no-repeat;"></div>
-                <div class="card-body">
-                    <h2 class="card-title text-primary">Special Interests</h2>
-                    <p class="card-text text-muted">From desert camping under the stars to luxury spa retreats, Oman offers a wide range of special interest activities to satisfy every traveler's unique preferences.</p>
-                </div>
+            <div class="mb-3">
+                <label for="bestTime" class="form-label">Best Time</label>
+                <input type="text" class="form-control" id="bestTime" required>
             </div>
-        </div>
-    </div>
-</div>
+            <div class="mb-3">
+                <label for="cost" class="form-label">Cost</label>
+                <input type="text" class="form-control" id="cost" required>
+            </div>
+            <div class="mb-3">
+                <label for="bookingLink" class="form-label">Booking Link</label>
+                <input type="text" class="form-control" id="bookingLink" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Package</button>
+        </form>
 
-<!-- Activities Table -->
-<div class="container my-5">
-    <h2 class="text-center text-primary mb-4">Activities in Oman</h2>
-    <div class="table-responsive-lg">
-        <table class="table table-hover table-bordered" id="activityTable">
-            <thead class="bg-primary text-white">
-                <tr>
-                    <th>Category</th>
-                    <th>Best Time</th>
-                    <th>Cost</th>
-                    <th>Booking</th>
-                </tr>
-            </thead>
-            <tbody class="bg-light"></tbody>
-        </table>
-    </div>
-</div>
 
-<!-- Cultural Experiences Table -->
-<div class="container my-5">
-    <h2 class="text-center text-primary mb-4">Cultural Experiences</h2>
-    <div class="table-responsive-lg">
-        <table class="table table-hover table-bordered" id="cultureTable">
-            <thead class="bg-primary text-white">
-                <tr>
-                    <th>Event Name</th>
-                    <th>Location</th>
-                    <th>Season</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody class="bg-light"></tbody>
-        </table>
-    </div>
-</div>
+        <h3 class="text-center mb-4">Search Tour Packages</h3>
+        <form id="searchForm">
+            <div class="mb-3">
+                <label for="searchTerm" class="form-label">Search Term</label>
+                <input type="text" class="form-control" id="searchTerm" placeholder="Search by Category, Time, or Cost" required>
+            </div>
+            <button type="submit" class="btn btn-success">Search</button>
+        </form>
 
-<!-- Form Section -->
-<div class="container form-section my-5">
-    <h2 class="text-primary text-center mb-4">Add Activity</h2>
-    <div class="row g-3 justify-content-center">
-        <div class="col-md-3">
-            <input type="text" id="cat" class="form-control" placeholder="Category">
-        </div>
-        <div class="col-md-3">
-            <input type="text" id="time" class="form-control" placeholder="Best Time">
-        </div>
-        <div class="col-md-3">
-            <input type="text" id="cost" class="form-control" placeholder="Cost">
-        </div>
-        <div class="col-md-3">
-            <input type="text" id="link" class="form-control" placeholder="Booking Link">
-        </div>
-        <div class="col-12 text-center">
-            <button class="btn btn-primary" onclick="addActivity()">Add Activity</button>
+    
+        <div class="table-responsive-lg mt-5">
+            <table class="table table-hover table-borderless rounded-3 overflow-hidden shadow-sm" id="tourTable">
+                <thead>
+                    <tr class="bg-gradient bg-primary text-white">
+                        <th class="p-4 text-center fw-bold fs-5">Category</th>
+                        <th class="p-4 text-center fw-bold fs-5">Best Time</th>
+                        <th class="p-4 text-center fw-bold fs-5">Cost</th>
+                        <th class="p-4 text-center fw-bold fs-5">Booking</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-light" id="tourTableBody">
+                  
+                </tbody>
+            </table>
         </div>
     </div>
 
-    <h2 class="text-primary text-center my-4">Search Activity</h2>
-    <div class="row g-3 justify-content-center">
-        <div class="col-md-6">
-            <input type="text" id="searchCat" class="form-control" placeholder="Search by Category">
-        </div>
-        <div class="col-12 text-center">
-            <button class="btn btn-primary" onclick="searchActivity()">Search</button>
-        </div>
-    </div>
-</div>
+    <footer class="bg-primary text-white py-4 text-center">
+        <p class="mb-0">&copy; 2025 Travepedia. All rights reserved.</p>
+    </footer>
 
-<!-- Footer -->
-<footer class="bg-primary text-white text-center py-4">
-    <p class="mb-0">&copy; 2025 Travepedia. All rights reserved.</p>
-</footer>
+    <script>
+        function ExperienceCategory(title, description, imageUrl) {
+            this.title = title;
+            this.description = description;
+            this.imageUrl = imageUrl;
+        }
 
-<!-- JavaScript Section -->
-<script>
-// Object Constructors
-function Activity(category, bestTime, cost, booking) {
-    this.category = category;
-    this.bestTime = bestTime;
-    this.cost = cost;
-    this.booking = booking;
-}
-function Culture(eventName, location, season, price) {
-    this.eventName = eventName;
-    this.location = location;
-    this.season = season;
-    this.price = price;
-}
+        function TourPackage(category, bestTime, cost, bookingLink) {
+            this.category = category;
+            this.bestTime = bestTime;
+            this.cost = cost;
+            this.bookingLink = bookingLink;
+        }
 
-// Arrays
-let activities = [
-    new Activity("Desert Camping", "Oct-Mar", "$150/night", "link1.html"),
-    new Activity("Mountain Trekking", "Nov-Feb", "$200/tour", "link2.html"),
-    new Activity("Cultural Sites", "Year-round", "$50-100/day", "link3.html"),
-    new Activity("Dhow Cruise", "All year", "$75/person", "link4.html")
-];
+        const tourPackages = [
+            new TourPackage("Desert Camping", "Oct-Mar", "$150/night", "#"),
+            new TourPackage("Mountain Trekking", "Nov-Feb", "$200/tour", "#"),
+            new TourPackage("Cultural Sites", "Year-round", "$50-100/day", "#"),
+            new TourPackage("Dhow Cruise", "All year", "$75/person", "#")
+        ];
 
-let cultures = [
-    new Culture("Muscat Festival", "Muscat", "Jan-Feb", "Free"),
-    new Culture("Khareef Festival", "Salalah", "Jul-Sep", "Free"),
-    new Culture("National Day Celebrations", "Nationwide", "Nov 18", "Free")
-];
+        const tourTableBody = document.getElementById("tourTableBody");
 
-// Functions
-function displayActivities() {
-    let table = document.getElementById("activityTable").getElementsByTagName('tbody')[0];
-    table.innerHTML = "";
-    activities.forEach(a => {
-        let row = table.insertRow();
-        row.innerHTML = `
-            <td>${a.category}</td>
-            <td>${a.bestTime}</td>
-            <td>${a.cost}</td>
-            <td><a href="${a.booking}" class="btn btn-sm btn-primary">Book Now</a></td>
-        `;
-    });
-}
+     
+        function displayTourPackages(packages) {
+            tourTableBody.innerHTML = ""; 
+            packages.forEach(pkg => {
+                const row = document.createElement("tr");
+                row.classList.add("border-bottom", "border-white");
+                row.innerHTML = `
+                    <td class="p-4 fw-semibold align-middle">${pkg.category}</td>
+                    <td class="p-4 align-middle text-center">
+                        <span class="badge bg-info text-dark">${pkg.bestTime}</span>
+                    </td>
+                    <td class="p-4 align-middle text-success fw-bold">${pkg.cost}</td>
+                    <td class="p-4 text-center">
+                        <a href="${pkg.bookingLink}" class="btn btn-primary rounded-5 px-4">Book Now</a>
+                    </td>
+                `;
+                tourTableBody.appendChild(row);
+            });
+        }
 
-function displayCultures() {
-    let table = document.getElementById("cultureTable").getElementsByTagName('tbody')[0];
-    table.innerHTML = "";
-    cultures.forEach(c => {
-        let row = table.insertRow();
-        row.innerHTML = `
-            <td>${c.eventName}</td>
-            <td>${c.location}</td>
-            <td>${c.season}</td>
-            <td>${c.price}</td>
-        `;
-    });
-}
+      
+        document.getElementById("addTourPackageForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const category = document.getElementById("category").value;
+            const bestTime = document.getElementById("bestTime").value;
+            const cost = document.getElementById("cost").value;
+            const bookingLink = document.getElementById("bookingLink").value;
 
-function addActivity() {
-    let category = document.getElementById("cat").value;
-    let time = document.getElementById("time").value;
-    let cost = document.getElementById("cost").value;
-    let link = document.getElementById("link").value;
+            const newPackage = new TourPackage(category, bestTime, cost, bookingLink);
+            tourPackages.push(newPackage);
+            displayTourPackages(tourPackages); 
+        });
 
-    if (category && time && cost && link) {
-        activities.push(new Activity(category, time, cost, link));
-        displayActivities();
-        alert("Activity added successfully!");
-    } else {
-        alert("Please fill all fields.");
-    }
-}
 
-function searchActivity() {
-    let searchValue = document.getElementById("searchCat").value.toLowerCase();
-    let result = activities.find(a => a.category.toLowerCase() === searchValue);
-    if (result) {
-        alert(`Found: ${result.category} - ${result.bestTime} - ${result.cost}`);
-    } else {
-        alert("No matching activity found.");
-    }
-}
+        document.getElementById("searchForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const searchTerm = document.getElementById("searchTerm").value.toLowerCase();
+            const filteredPackages = tourPackages.filter(pkg =>
+                pkg.category.toLowerCase().includes(searchTerm) ||
+                pkg.bestTime.toLowerCase().includes(searchTerm) ||
+                pkg.cost.toLowerCase().includes(searchTerm)
+            );
+            displayTourPackages(filteredPackages); 
+        });
 
-// Load tables initially
-window.onload = function() {
-    displayActivities();
-    displayCultures();
-};
-</script>
-
+     
+        displayTourPackages(tourPackages);
+    </script>
 </body>
 </html>
