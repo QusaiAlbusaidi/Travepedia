@@ -12,7 +12,7 @@
                         <a href="index.html" class="navbar-brand fs-3 fw-bold text-dark">Travepedia</a>
                     </div>
                     <ul class="navbar-nav flex-row gap-5">
-                        <li class="nav-item"><a href="AboutUs.html" class="nav-link fw-bold text-dark">About Us</a></li>
+                        <li class="nav-item"><a href="AboutUs.html" class="nav-link fw-bold">About Us</a></li>
                         <li class="nav-item"><a href="Services.html" class="nav-link fw-bold">Services</a></li>
                         <li class="nav-item"><a href="HolidayPackages.html" class="nav-link fw-bold">Packages</a></li>
                         <li class="nav-item"><a href="luxury.html" class="nav-link fw-bold">Luxury</a></li>
@@ -23,30 +23,30 @@
                 </div>
             </nav>
         </header>
-        <body style="background:url(bahla.jpeg)center/cover no-repeat;">
-            <div class="container my-5">
+        <body >
+            <div class="container my-5" style="background:url(bahla.jpeg)center/cover no-repeat;">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-8 col-lg-6">
                         <div class="rounded-3 shadow-sm border-0">
                             <div class=" p-4 p-md-5 mb-4 ">
                                 <form name="Form1" action="mailto:travepediaworld@gmail.com" onsubmit="return Validation()">
-                                    <label>Full Name</label></br>
+                                    <label class="text-dark fw-bold">Full Name</label></br>
                                     <input type="text" name="FullName" class="form-control" placeholder="Enter Your Full Name"/></br>
-                                    <label>Email Address</label></br>
+                                    <label class="text-dark fw-bold">Email Address</label></br>
                                     <input type="text" name="Email" class="form-control" placeholder="Enter Your Email Address"/></br>
-                                    <label>Phone Number</label></br>
+                                    <label class="text-dark fw-bold">Phone Number</label></br>
                                     <input type="text" name="PhoneNumber" class="form-control" placeholder="Enter Your Phone Number"/>
                                     </br>
-                                    <label>Message</label></br>
+                                    <label class="text-dark fw-bold">Message</label></br>
                                     <textarea name="Message" class="form-control"></textarea></br>
-                                    <label>Gender</label></br>
+                                    <label class="text-dark fw-bold">Gender</label></br>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" value="M" name="Gender" id="MaleOption"/>
-                                        <label class="form-check-label" for="MaleOption">Male</label>
+                                        <label class="form-check-label text-dark fw-bold" for="MaleOption">Male</label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" value="F" name="Gender" id="FemaleOption"/>
-                                        <label class="form-check-label" for="FemaleOption">Female</label>
+                                        <label class="form-check-label text-dark fw-bold" for="FemaleOption">Female</label>
                                     </div>
                                     </br></br>
                                     <input type="submit" name="Submit" class="btn btn-primary w-100 fw-bold py-2"/>
