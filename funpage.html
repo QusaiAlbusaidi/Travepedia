@@ -29,7 +29,7 @@
 
         <script type="text/javascript">
             var myGamePiece;
-            var myObstacle;
+            var myObstacles=[];
 
             function startGame() {
                 myGameArea.start();
@@ -94,15 +94,33 @@
             }
 
             function updateGameArea() {
-                if (myGamePiece.crashWith(myObstacle)) {
-                    myGameArea.stop();
-                } else {
-                    myGameArea.clear();
-                    myObstacle.x += -1;
-                    myObstacle.update();
-                    myGamePiece.newPos();
-                    myGamePiece.update();
+                var x, gap, minHeight, maxHeight, minGap, maxGap;
+                for(i=0;i<myObstacles.length;i+=1){
+                    if(myGamePiece.crashWith(myObstacles[i])){
+                        myGameArea.stop();
+                        return;
+                    }
                 }
+                myGameArea.clear();
+                myGameArea.frameNo += 1;
+                if(myGameArea.frameNo == 1 || everyinterval(150)) {
+                    x = myGameArea.canvas.width;
+                    minHeight = 20;
+                    maxHeight = 200;
+                    height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
+                    minGap = 50;
+                    maxGap = 200;
+                    gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
+                    myObstacles.push(new component(10, height, "green", x, 0));
+                    myObstacles.push(new component(10, x-height-gap, "green", x, height+gap));
+                    
+                }
+                for(i=0;i<myObstacles.length;i+=1) {
+                    myObstacles[i].x += -1;
+                    myObstacles[i].update();
+                }
+                myGamePiece.newPos();
+                myGamePiece.update();
             }
             function moveup(){
                 myGamePiece.speedY -= 1;
@@ -123,15 +141,26 @@
         </script>
 
         <div class="container my-5">
-            <div class="row" style="height: 20%;"></div>
+            <div class="row" style="height: 20%;">
+                <div class="col">
+                    <div class="row">
+                        <input type="button" class="btn btn-dark" value="Start Game" onclick="startGame()"/>
+                    </div>
+                    <div class="row">
+                        <input type="button" class="btn btn-dark" value="UP" onmousedown="moveup()" onmouseup="stopMove()"/>
+                    </div>
+                    <div class="row">
+                        <input type="button" class="btn btn-dark" value="DOWN" onmousedown="movedown()" onmouseup="stopMove()"/>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-4"></div>
                 <div class="col">
-                    <input type="button" class="btn btn-dark" value="Start Game" onclick="startGame()"/>
-                    <input type="button" class="btn btn-dark" value="UP" onmousedown="moveup()" onmouseup="stopMove()"/>
-                    <input type="button" class="btn btn-dark" value="DOWN" onmousedown="movedown()" onmouseup="stopMove()"/>
+                    <!--
                     <input type="button" class="btn btn-dark" value="LEFT" onmousedown="moveleft()" onmouseup="stopMove()"/>
                     <input type="button" class="btn btn-dark" value="RIGHT" onmousedown="moveright()" onmouseup="stopMove()"/>
+                    -->
                 </div>
             </div>
         </div>
