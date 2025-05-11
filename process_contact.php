@@ -6,7 +6,7 @@ $message = htmlspecialchars($_POST['message']);
 
 // 2. Display the submitted data (styled to match your theme)
 echo '
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,7 +54,7 @@ echo '
         </div>
     </div>
 
-    <!-- Reuse your footer -->
+    
     <footer class="bg-primary text-white py-4 text-center">
         <p class="mb-0">&copy; 2025 Travepedia. All rights reserved.</p>
     </footer>
