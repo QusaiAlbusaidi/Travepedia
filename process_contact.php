@@ -48,7 +48,7 @@ echo '
                     <h3 class="text-primary mb-4">Your Message:</h3>
                     <p><strong>Email:</strong> ' . $email . '</p>
                     <p><strong>Message:</strong> ' . $message . '</p>
-                    <a href="contact.php" class="btn btn-primary mt-3">Back to Contact</a>
+                    <a href="contactUS.php" class="btn btn-primary mt-3">Back to Contact</a>
                 </div>
             </div>
         </div>
