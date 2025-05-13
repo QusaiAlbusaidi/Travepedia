@@ -32,29 +32,30 @@ echo '
         </nav>
     </header>
 
-    <!-- Thank you banner -->
-    <div class="vh-100 d-flex align-items-center justify-content-center text-white thank-you-banner">
-        <div class="container text-center">
-            <h1 class="display-3 fw-bold mb-3">Thank You, ' . $fname . '!</h1>
-            <p class="lead fs-4">We\'ll get back to you soon.</p>
+    <section>
+        <!-- Thank you banner -->
+        <div class="vh-100 d-flex align-items-center justify-content-center text-white thank-you-banner">
+            <div class="container text-center">
+                <h1 class="display-3 fw-bold mb-3">Thank You, ' . $fname . '!</h1>
+                <p class="lead fs-4">We\'ll get back to you soon.</p>
+            </div>
         </div>
-    </div>
 
-    <!-- Submitted data display -->
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-8 col-lg-6">
-                <div class="rounded-3 shadow-sm p-4">
-                    <h3 class="text-primary mb-4">Your Message:</h3>
-                    <p><strong>Email:</strong> ' . $email . '</p>
-                    <p><strong>Phone Number:</strong> ' . $phonenumber . '</p>
-                    <p><strong>Message:</strong> ' . $message . '</p>
-                    <a href="Questionnaire.php" class="btn btn-primary mt-3">Back to Questionnaire</a>
+        <!-- Submitted data display -->
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="rounded-3 shadow-sm p-4">
+                        <h3 class="text-primary mb-4">Your Message:</h3>
+                        <p><strong>Email:</strong> ' . $email . '</p>
+                        <p><strong>Phone Number:</strong> ' . $phonenumber . '</p>
+                        <p><strong>Message:</strong> ' . $message . '</p>
+                        <a href="Questionnaire.php" class="btn btn-primary mt-3">Back to Questionnaire</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
+    </section>
     
     <footer class="bg-primary text-white py-4 text-center">
         <p class="mb-0">&copy; 2025 Travepedia. All rights reserved.</p>
