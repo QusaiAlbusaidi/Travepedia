@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <title>Experience Oman</title>
+    <style>
+        .edit-form { display: none; }
+    </style>
 </head>
 <body>
     <header>
@@ -18,7 +21,7 @@
                     <li class="nav-item"><a href="AboutUs.html" class="nav-link fw-bold">About Us</a></li>
                     <li class="nav-item"><a href="Services.html" class="nav-link fw-bold">Services</a></li>
                     <li class="nav-item"><a href="HolidayPackages.html" class="nav-link fw-bold">Holiday Packages</a></li>
-                    <li class="nav-item"><a href="luxury.html" class="nav-link fw-bold">Luxury Concierge</a></li>
+                    <li class="nav-item"><a href="luxury.html" class="nav-link fw-bold ">Luxury Concierge</a></li>
                     <li class="nav-item"><a href="ExperienceOman.html" class="nav-link fw-bold text-primary">Experience Oman</a></li>
                     <li class="nav-item"><a href="Feedback.html" class="nav-link fw-bold">Feedback</a></li>
                     <li class="nav-item"><a href="contactUs.html" class="btn btn-primary fw-bold">Contact Us</a></li>
@@ -27,39 +30,60 @@
         </nav>
     </header>
 
-    <div class="vh-100 d-flex align-items-center justify-content-center text-white" style=" background: url('BG12.jpg') center/cover no-repeat; min-height: 400px; margin-top: 80px;">
-        <div class="text-center">
+    <div class="vh-100 d-flex align-items-center justify-content-center text-white" style=" background:  url('BG12.jpg') center/cover no-repeat;">
+        <div class=" text-center">
             <h1 class="display-3 fw-bold mb-3">Experience Oman</h1>
             <p class="lead fs-3">Discover the breathtaking landscapes, rich culture, and unique adventures that Oman has to offer</p>
         </div>
     </div>
 
     <div class="container my-5 pb-5">
+        <!-- Add New Tour Package Form -->
         <h3 class="text-center mb-4">Add New Tour Package</h3>
-        <form id="addTourPackageForm" class="mb-4" novalidate>
+        <form id="addTourPackageForm" class="mb-4">
             <div class="mb-3">
                 <label for="category" class="form-label">Category</label>
                 <input type="text" class="form-control" id="category" required>
-                <div class="text-danger" id="categoryError"></div>
             </div>
             <div class="mb-3">
                 <label for="bestTime" class="form-label">Best Time</label>
                 <input type="text" class="form-control" id="bestTime" required>
-                <div class="text-danger" id="bestTimeError"></div>
             </div>
             <div class="mb-3">
                 <label for="cost" class="form-label">Cost</label>
                 <input type="text" class="form-control" id="cost" required>
-                <div class="text-danger" id="costError"></div>
             </div>
             <div class="mb-3">
                 <label for="bookingLink" class="form-label">Booking Link</label>
                 <input type="text" class="form-control" id="bookingLink" required>
-                <div class="text-danger" id="bookingLinkError"></div>
             </div>
             <button type="submit" class="btn btn-primary">Add Package</button>
         </form>
 
+        <!-- Edit Tour Package Form (Hidden by default) -->
+        <form id="editTourPackageForm" class="mb-4 edit-form">
+            <input type="hidden" id="editId">
+            <div class="mb-3">
+                <label for="editCategory" class="form-label">Category</label>
+                <input type="text" class="form-control" id="editCategory" required>
+            </div>
+            <div class="mb-3">
+                <label for="editBestTime" class="form-label">Best Time</label>
+                <input type="text" class="form-control" id="editBestTime" required>
+            </div>
+            <div class="mb-3">
+                <label for="editCost" class="form-label">Cost</label>
+                <input type="text" class="form-control" id="editCost" required>
+            </div>
+            <div class="mb-3">
+                <label for="editBookingLink" class="form-label">Booking Link</label>
+                <input type="text" class="form-control" id="editBookingLink" required>
+            </div>
+            <button type="submit" class="btn btn-warning">Update Package</button>
+            <button type="button" class="btn btn-secondary" id="cancelEdit">Cancel</button>
+        </form>
+
+        <!-- Search Tour Packages Form -->
         <h3 class="text-center mb-4">Search Tour Packages</h3>
         <form id="searchForm">
             <div class="mb-3">
@@ -67,8 +91,10 @@
                 <input type="text" class="form-control" id="searchTerm" placeholder="Search by Category, Time, or Cost" required>
             </div>
             <button type="submit" class="btn btn-success">Search</button>
+            <button type="button" class="btn btn-info" id="showAll">Show All</button>
         </form>
 
+        <!-- Tour Packages Table -->
         <div class="table-responsive-lg mt-5">
             <table class="table table-hover table-borderless rounded-3 overflow-hidden shadow-sm" id="tourTable">
                 <thead>
@@ -77,95 +103,148 @@
                         <th class="p-4 text-center fw-bold fs-5">Best Time</th>
                         <th class="p-4 text-center fw-bold fs-5">Cost</th>
                         <th class="p-4 text-center fw-bold fs-5">Booking</th>
+                        <th class="p-4 text-center fw-bold fs-5">Actions</th>
                     </tr>
                 </thead>
-                <tbody class="bg-light" id="tourTableBody"></tbody>
+                <tbody class="bg-light" id="tourTableBody">
+                    <!-- Packages will be loaded here via JavaScript -->
+                </tbody>
             </table>
         </div>
     </div>
 
     <footer class="bg-primary text-white py-4 text-center">
-        <p class="mb-0">&copy; 2025 Travepedia. All rights reserved.</p>
+        <p class="mb-0">© 2025 Travepedia. All rights reserved.</p>
     </footer>
 
     <script>
-        function TourPackage(category, bestTime, cost, bookingLink) {
-            this.category = category;
-            this.bestTime = bestTime;
-            this.cost = cost;
-            this.bookingLink = bookingLink;
+        // Load packages when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPackages();
+        });
+
+        // Function to load packages
+        function loadPackages(searchTerm = '') {
+            let url = 'process_package.php';
+            if (searchTerm) {
+                url += `?search=1&searchTerm=${encodeURIComponent(searchTerm)}`;
+            }
+
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('tourTableBody').innerHTML = data;
+                    setupEditButtons();
+                    setupDeleteButtons();
+                });
         }
 
-        const tourPackages = [
-            new TourPackage("Desert Camping", "Oct-Mar", "$150/night", "#"),
-            new TourPackage("Mountain Trekking", "Nov-Feb", "$200/tour", "#"),
-            new TourPackage("Cultural Sites", "Year-round", "$50-100/day", "#"),
-            new TourPackage("Dhow Cruise", "All year", "$75/person", "#")
-        ];
+        // Add new package
+        document.getElementById('addTourPackageForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData();
+            formData.append('add', '1');
+            formData.append('category', document.getElementById('category').value);
+            formData.append('bestTime', document.getElementById('bestTime').value);
+            formData.append('cost', document.getElementById('cost').value);
+            formData.append('bookingLink', document.getElementById('bookingLink').value);
 
-        const tourTableBody = document.getElementById("tourTableBody");
+            fetch('process_package.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data);
+                this.reset();
+                loadPackages();
+            });
+        });
 
-        function displayTourPackages(packages) {
-            tourTableBody.innerHTML = "";
-            packages.forEach(pkg => {
-                const row = document.createElement("tr");
-                row.classList.add("border-bottom", "border-white");
-                row.innerHTML = `
-                    <td class="p-4 fw-semibold align-middle">${pkg.category}</td>
-                    <td class="p-4 align-middle text-center">
-                        <span class="badge bg-info text-dark">${pkg.bestTime}</span>
-                    </td>
-                    <td class="p-4 align-middle text-success fw-bold">${pkg.cost}</td>
-                    <td class="p-4 text-center">
-                        <a href="${pkg.bookingLink}" class="btn btn-primary rounded-5 px-4">Book Now</a>
-                    </td>`;
-                tourTableBody.appendChild(row);
+        // Search packages
+        document.getElementById('searchForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const searchTerm = document.getElementById('searchTerm').value;
+            loadPackages(searchTerm);
+        });
+
+        // Show all packages
+        document.getElementById('showAll').addEventListener('click', function() {
+            document.getElementById('searchTerm').value = '';
+            loadPackages();
+        });
+
+        // Setup edit buttons
+        function setupEditButtons() {
+            document.querySelectorAll('.edit-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    document.getElementById('editId').value = this.dataset.id;
+                    document.getElementById('editCategory').value = this.dataset.category;
+                    document.getElementById('editBestTime').value = this.dataset.besttime;
+                    document.getElementById('editCost').value = this.dataset.cost;
+                    document.getElementById('editBookingLink').value = this.dataset.bookinglink;
+                    
+                    document.getElementById('addTourPackageForm').classList.add('edit-form');
+                    document.getElementById('editTourPackageForm').classList.remove('edit-form');
+                });
             });
         }
 
-        function validateTourForm(category, bestTime, cost, bookingLink) {
-            let valid = true;
-            const urlRegex = /^(https?:\/\/)?([\w\-])+\.[\w]{2,}(\/[\w\-._~:/?#[\]@!$&'()*+,;=.]+)?$/;
-            const costRegex = /^\$\d+(\/\w+)?(-\d+)?(\/\w+)?$/;
-
-            document.getElementById("categoryError").textContent = category ? "" : "Category is required.";
-            document.getElementById("bestTimeError").textContent = bestTime ? "" : "Best time is required.";
-            document.getElementById("costError").textContent = costRegex.test(cost) ? "" : "Cost format should be like $150/night.";
-            document.getElementById("bookingLinkError").textContent = urlRegex.test(bookingLink) ? "" : "Enter a valid URL.";
-
-            if (!category || !bestTime || !costRegex.test(cost) || !urlRegex.test(bookingLink)) valid = false;
-
-            return valid;
+        // Setup delete buttons
+        function setupDeleteButtons() {
+            document.querySelectorAll('.delete-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    if (confirm(`Are you sure you want to delete the package "${this.dataset.category}"?`)) {
+                        const formData = new FormData();
+                        formData.append('delete', this.dataset.id);
+                        fetch('process_package.php', {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => response.text())
+                        .then(data => {
+                            alert(data);
+                            loadPackages();
+                        })
+                        .catch(error => alert('Error: ' + error.message));
+                    }
+                });
+            });
         }
 
-        document.getElementById("addTourPackageForm").addEventListener("submit", function(event) {
-            event.preventDefault();
+        // Update package
+        document.getElementById('editTourPackageForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData();
+            formData.append('update', '1');
+            formData.append('id', document.getElementById('editId').value);
+            formData.append('category', document.getElementById('editCategory').value);
+            formData.append('bestTime', document.getElementById('editBestTime').value);
+            formData.append('cost', document.getElementById('editCost').value);
+            formData.append('bookingLink', document.getElementById('editBookingLink').value);
 
-            const category = document.getElementById("category").value.trim();
-            const bestTime = document.getElementById("bestTime").value.trim();
-            const cost = document.getElementById("cost").value.trim();
-            const bookingLink = document.getElementById("bookingLink").value.trim();
-
-            if (validateTourForm(category, bestTime, cost, bookingLink)) {
-                const newPackage = new TourPackage(category, bestTime, cost, bookingLink);
-                tourPackages.push(newPackage);
-                displayTourPackages(tourPackages);
+            fetch('process_package.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data);
                 this.reset();
-            }
+                document.getElementById('addTourPackageForm').classList.remove('edit-form');
+                this.classList.add('edit-form');
+                loadPackages();
+            });
         });
 
-        document.getElementById("searchForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            const searchTerm = document.getElementById("searchTerm").value.toLowerCase();
-            const filteredPackages = tourPackages.filter(pkg =>
-                pkg.category.toLowerCase().includes(searchTerm) ||
-                pkg.bestTime.toLowerCase().includes(searchTerm) ||
-                pkg.cost.toLowerCase().includes(searchTerm)
-            );
-            displayTourPackages(filteredPackages);
+        // Cancel edit
+        document.getElementById('cancelEdit').addEventListener('click', function() {
+            document.getElementById('editTourPackageForm').reset();
+            document.getElementById('addTourPackageForm').classList.remove('edit-form');
+            document.getElementById('editTourPackageForm').classList.add('edit-form');
         });
-
-        displayTourPackages(tourPackages);
     </script>
 </body>
 </html>
