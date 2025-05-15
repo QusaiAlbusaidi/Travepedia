@@ -66,7 +66,7 @@ function renderContactTable($contacts) {
         <h1 class="mb-4 text-primary text-center">Submitted Contact Information</h1>
         <?php echo renderContactTable($contacts); ?>
         <div class="text-center mt-4">
-            <a href="contact-form.html" class="btn btn-outline-primary">Back to Form</a>
+            <a href="AboutUs.html" class="btn btn-outline-primary">Back to Form</a>
         </div>
     </div>
 
