@@ -1,66 +1,87 @@
 <?php
+// Define a class to represent a form submission record
+class Submission {
+    public $fullname;
+    public $email;
+    public $phonenumber;
+    public $message;
 
+    public function __construct($fullname, $email, $phonenumber, $message) {
+        $this->fullname = $fullname;
+        $this->email = $email;
+        $this->phonenumber = $phonenumber;
+        $this->message = $message;
+    }
+}
+
+// Get the form submission
 $fname = $_POST["FullName"];
 $email = $_POST["Email"];
 $phonenumber = $_POST["PhoneNumber"];
 $message = $_POST["Message"];
 
+// Create a record object
+$submission = new Submission($fname, $email, $phonenumber, $message);
+
+// Store it in an array of submissions
+$submissions = [$submission]; // For now just one; scalable for multiple
+
+// Function to display submissions in a Bootstrap-styled table
+function renderTable($submissions) {
+    $html = '<div class="table-responsive">
+                <table class="table table-bordered table-striped table-hover align-middle">
+                    <thead class="table-primary">
+                        <tr>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Phone Number</th>
+                            <th scope="col">Message</th>
+                        </tr>
+                    </thead>
+                    <tbody>';
+    foreach ($submissions as $submission) {
+        $html .= '<tr>
+                    <td>' . htmlspecialchars($submission->fullname) . '</td>
+                    <td>' . htmlspecialchars($submission->email) . '</td>
+                    <td>' . htmlspecialchars($submission->phonenumber) . '</td>
+                    <td>' . nl2br(htmlspecialchars($submission->message)) . '</td>
+                  </tr>';
+    }
+    $html .= '</tbody></table></div>';
+    return $html;
+}
+
+// Begin XHTML output
+echo '<?xml version="1.0" encoding="UTF-8"?>';
 echo '
-<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You | Travepedia</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .thank-you-banner {
-            background: url("oman.jpg") center/cover no-repeat;
-            min-height: 45vh;
-        }
-    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
-<body class="d-flex flex-column min-vh-100">
-    <!-- Reuse your header -->
-    <header>
-        <nav class="navbar navbar-white bg-white p-3">
-            <div class="container-fluid">
-                <div class="align-items-center">
-                    <img src="TravepediaWW.png" alt="Logo" width="70" class="me-2">
-                    <a href="index.html" class="navbar-brand fs-3 fw-bold text-dark">Travepedia</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+<body class="bg-light">
 
-    <section>
-        <!-- Thank you banner -->
-        <div class="vh-100 d-flex align-items-center justify-content-center text-white thank-you-banner">
-            <div class="container text-center">
-                <h1 class="display-3 fw-bold mb-3">Thank You, ' . $fname . '!</h1>
-                <p class="lead fs-4">We\'ll get back to you soon.</p>
-            </div>
+    <div class="container py-5">
+        <div class="text-center mb-4">
+            <h1 class="display-5 text-success">Thank You, ' . htmlspecialchars($fname) . '!</h1>
+            <p class="lead">We received your message. Here are the details you submitted:</p>
         </div>
 
-        <!-- Submitted data display -->
-        <div class="container my-5">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-8 col-lg-6">
-                    <div class="rounded-3 shadow-sm p-4">
-                        <h3 class="text-primary mb-4">Your Message:</h3>
-                        <p><strong>Email:</strong> ' . $email . '</p>
-                        <p><strong>Phone Number:</strong> ' . $phonenumber . '</p>
-                        <p><strong>Message:</strong> ' . $message . '</p>
-                        <a href="Questionnaire.php" class="btn btn-primary mt-3">Back to Questionnaire</a>
-                    </div>
+        <div class="card shadow">
+            <div class="card-body">
+                ' . renderTable($submissions) . '
+                <div class="text-center mt-4">
+                    <a href="Questionnaire.html" class="btn btn-outline-primary">Back to Questionnaire</a>
                 </div>
             </div>
         </div>
-    </section>
-    
-    <footer class="bg-primary text-white py-4 text-center">
+    </div>
+
+    <footer class="bg-primary text-white text-center py-3 mt-auto">
         <p class="mb-0">&copy; 2025 Travepedia. All rights reserved.</p>
     </footer>
+
 </body>
-</html>
-';
+</html>';
 ?>
