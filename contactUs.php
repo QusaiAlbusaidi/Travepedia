@@ -63,7 +63,7 @@
                         <h2 class="text-center text-primary mb-4">Email us</h2>
                         <p class="text-center text-muted mb-4">In a rush? No problem! Use the form below to email us!</p>
                         
-                        <form method="post" action="mailto:travepediaworld@gmail.com">
+                        <form method="post" action="process_contact.php">
                             <div class="mb-4">
                                 <label for="name" class="form-label fw-bold text-dark">Name</label>
                                 <input type="text" class="form-control" id="name" name="name" required>
