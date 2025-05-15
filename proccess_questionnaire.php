@@ -52,8 +52,8 @@ function renderTable($submissions) {
 }
 
 // Begin XHTML output
-echo '<?xml version="1.0" encoding="UTF-8"?>';
 echo '
+<html>
 <head>
     <title>Thank You | Travepedia</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
