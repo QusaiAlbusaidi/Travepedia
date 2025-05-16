@@ -19,7 +19,7 @@ class TourPackage {
 }
 
 // Create database connection
-$conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+$conn = new mysqli("localhost", "root", "", "travepedia_database");
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
